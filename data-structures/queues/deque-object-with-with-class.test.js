@@ -1,6 +1,7 @@
-import { Deque } from './deque-array-with-with-function.js';
+import Deque from './deque-object-with-with-class.js';
 
-const deque = Deque();
+const deque = new Deque();
+
 describe('Data Structure: Deque', () => {
     
     test('The queue show should have 1 items', () => {
@@ -29,8 +30,8 @@ describe('Data Structure: Deque', () => {
     });
 
     test('should display the output in string format', () => {
-        expect(deque.showDeque()).toBe('caqui, banana, maçã, uva, laranja');
-     });
+       expect(deque.toString()).toBe('[caqui, banana, maçã, uva, laranja]');
+    });
 
     test('should return false when deque has more than one item', () => {
         expect(deque.isEmpty()).toBe(false);
