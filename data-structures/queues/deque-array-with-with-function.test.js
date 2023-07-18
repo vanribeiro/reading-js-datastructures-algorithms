@@ -49,4 +49,28 @@ describe('Data Structure: Deque', () => {
         expect(deque.size()).toBe(0);
     });
 
+    test('should return undefined when front is peeked and the queue is empty', () => {
+        expect(deque.peekFront()).toBeUndefined();
+    });
+
+    test('should return undefined when back is peeked and the queue is empty', () => {
+        expect(deque.peekBack()).toBeUndefined();
+    });
+
+    test('should return undefined when remove an item from back and the queue is empty', () => {
+        expect(deque.removeBack()).toBeUndefined();
+    });
+
+    test('should add an item in front if the queue is empty', () => {
+        expect(deque.isEmpty()).toBeTruthy();
+        deque.addFront('tangerina');
+    });
+
+    test('should add an item in front if the queue is not empty', () => {
+        expect(deque.isEmpty()).toBeFalsy();
+        deque.addBack('mamão');
+        deque.addBack('pera');
+        deque.addFront('abacate');
+    });
+
 });
