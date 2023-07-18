@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1689693141867" clover="3.2.0">
-  <project timestamp="1689693141867" name="All files">
-    <metrics statements="174" coveredstatements="174" conditionals="71" coveredconditionals="71" methods="51" coveredmethods="51" elements="296" coveredelements="296" complexity="0" loc="174" ncloc="174" packages="5" files="6" classes="6"/>
+<coverage generated="1689719716023" clover="3.2.0">
+  <project timestamp="1689719716023" name="All files">
+    <metrics statements="174" coveredstatements="174" conditionals="71" coveredconditionals="71" methods="51" coveredmethods="51" elements="296" coveredelements="296" complexity="0" loc="174" ncloc="174" packages="6" files="6" classes="6"/>
     <package name="data-structures.linked-lists.classes">
       <metrics statements="59" coveredstatements="59" conditionals="25" coveredconditionals="25" methods="13" coveredmethods="13"/>
       <file name="linked-list-with-class.js" path="C:\Users\v.cristiane.ribeiro\Documents\Studies\loaine's-book\reading-javascript-datastructures-algorithms\data-structures\linked-lists\classes\linked-list-with-class.js">
@@ -135,24 +135,9 @@
         <line num="125" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="data-structures.queues">
-      <metrics statements="50" coveredstatements="50" conditionals="16" coveredconditionals="16" methods="22" coveredmethods="22"/>
-      <file name="deque-array-with-with-function.js" path="C:\Users\v.cristiane.ribeiro\Documents\Studies\loaine's-book\reading-javascript-datastructures-algorithms\data-structures\queues\deque-array-with-with-function.js">
-        <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="11" coveredmethods="11"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="6" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="11" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="12" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-      </file>
-      <file name="deque-object-with-with-class.js" path="C:\Users\v.cristiane.ribeiro\Documents\Studies\loaine's-book\reading-javascript-datastructures-algorithms\data-structures\queues\deque-object-with-with-class.js">
+    <package name="data-structures.queues.deques.classes">
+      <metrics statements="38" coveredstatements="38" conditionals="12" coveredconditionals="12" methods="11" coveredmethods="11"/>
+      <file name="deque-object-with-with-class.js" path="C:\Users\v.cristiane.ribeiro\Documents\Studies\loaine's-book\reading-javascript-datastructures-algorithms\data-structures\queues\deques\classes\deque-object-with-with-class.js">
         <metrics statements="38" coveredstatements="38" conditionals="12" coveredconditionals="12" methods="11" coveredmethods="11"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
@@ -192,6 +177,24 @@
         <line num="74" count="1" type="stmt"/>
         <line num="75" count="4" type="stmt"/>
         <line num="77" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="data-structures.queues.deques.functions">
+      <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="11" coveredmethods="11"/>
+      <file name="deque-array-with-with-function.js" path="C:\Users\v.cristiane.ribeiro\Documents\Studies\loaine's-book\reading-javascript-datastructures-algorithms\data-structures\queues\deques\functions\deque-array-with-with-function.js">
+        <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="11" coveredmethods="11"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="11" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
       </file>
     </package>
     <package name="models">
