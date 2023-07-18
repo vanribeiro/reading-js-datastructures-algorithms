@@ -69,13 +69,15 @@ describe('Data Structure: Deque', () => {
     test('should add an item in front if the queue is empty', () => {
         expect(deque.isEmpty()).toBeTruthy();
         deque.addFront('tangerina');
+        deque.addFront('manga');
+        expect(deque.isEmpty()).toBeFalsy();
     });
 
     test('should add an item in front if the queue is not empty', () => {
         expect(deque.isEmpty()).toBeFalsy();
-        deque.addBack('mamão');
-        deque.addBack('pera');
-        deque.addFront('abacate');
+        deque.removeFront('tangerina');
+        deque.addFront('ameixa');
+        expect(deque.size()).toBe(2);
     });
 
 });

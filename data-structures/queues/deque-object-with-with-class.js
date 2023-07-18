@@ -16,7 +16,7 @@ class Deque {
             this.addBack(item);
         } else if(this.lowestCount > 0) {
             this.lowestCount--;
-            this.items[this.lowestCount] = element;
+            this.items[this.lowestCount] = item;
         } else {
             for (let index = this.count; index > 0; --index) {
                 this.items[index] = this.items[index - 1];
