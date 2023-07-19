@@ -6,9 +6,7 @@ const queue = new Queue();
 describe('Data Structure: Queue (with class and objects', () => {
 
     beforeEach(() => {
-
         queue.clear();
-        
     });
 
     describe('when the queue is empty', () => {
@@ -33,8 +31,8 @@ describe('Data Structure: Queue (with class and objects', () => {
             expect(queue.dequeue()).toBeUndefined();
         });
 
-        test('should return an empty string', () => {
-            expect(queue.toString()).toBe('');
+        test('should return an empty array', () => {
+            expect(queue.getItems()).toStrictEqual({});
         });
 
     });
@@ -81,5 +79,20 @@ describe('Data Structure: Queue (with class and objects', () => {
         });
 
     });
+
+    describe('when element is removed from the queue', () => {
+        const populateQueue = () => {
+            queue.enqueue('mimi');
+            queue.enqueue('max');
+            queue.enqueue('dudu');
+        }
+
+        test('should return the value when one element is dequeue', () => {
+            populateQueue();
+            expect(queue.dequeue('mimi')).toBe('mimi');
+        });
+
+    });
+    
 
 });

@@ -26,20 +26,10 @@ class Queue {
     size () {
         return this.items.length;
     }
+
+    getItems () {
+        return this.items;
+    }
 }
 
 export default Queue;
-
-// const queue = new Queue();
-// console.log(`isEmpty: ${queue.isEmpty()}`);
-// queue.enqueue(3)
-// queue.enqueue(5);
-// queue.enqueue(18);
-// queue.enqueue(1);
-// console.log(`queue: ${queue.items}`)
-// console.log(`isEmpty: ${queue.isEmpty()}`);
-// console.log(`size: ${queue.size()}`);
-// console.log(`peek: ${queue.peek()}`);
-// console.log(`dequeue: ${queue.dequeue()}`);
-// queue.clear();
-// console.log(`isEmpty: ${queue.isEmpty()}`);

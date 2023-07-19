@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1689748027296" clover="3.2.0">
-  <project timestamp="1689748027296" name="All files">
-    <metrics statements="264" coveredstatements="259" conditionals="87" coveredconditionals="87" methods="99" coveredmethods="94" elements="450" coveredelements="440" complexity="0" loc="264" ncloc="264" packages="10" files="12" classes="12"/>
+<coverage generated="1689804567659" clover="3.2.0">
+  <project timestamp="1689804567659" name="All files">
+    <metrics statements="262" coveredstatements="262" conditionals="87" coveredconditionals="87" methods="100" coveredmethods="100" elements="449" coveredelements="449" complexity="0" loc="262" ncloc="262" packages="10" files="12" classes="12"/>
     <package name="data-structures.linked-lists.using-classes">
       <metrics statements="59" coveredstatements="59" conditionals="25" coveredconditionals="25" methods="13" coveredmethods="13"/>
       <file name="linked-list-with-class.js" path="C:\Users\v.cristiane.ribeiro\Documents\Studies\loaine's-book\reading-javascript-datastructures-algorithms\data-structures\linked-lists\using-classes\linked-list-with-class.js">
@@ -198,47 +198,45 @@
       </file>
     </package>
     <package name="data-structures.queues.queue.using-arrays">
-      <metrics statements="7" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="2"/>
+      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
       <file name="queue-array-with-class.js" path="C:\Users\v.cristiane.ribeiro\Documents\Studies\loaine's-book\reading-javascript-datastructures-algorithms\data-structures\queues\queue\using-arrays\queue-array-with-class.js">
-        <metrics statements="7" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="2"/>
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
+        <line num="7" count="10" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
+        <line num="23" count="9" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
       </file>
     </package>
     <package name="data-structures.queues.queue.using-objects">
-      <metrics statements="25" coveredstatements="25" conditionals="4" coveredconditionals="4" methods="9" coveredmethods="9"/>
+      <metrics statements="22" coveredstatements="22" conditionals="4" coveredconditionals="4" methods="9" coveredmethods="9"/>
       <file name="queue-object-with-class.js" path="C:\Users\v.cristiane.ribeiro\Documents\Studies\loaine's-book\reading-javascript-datastructures-algorithms\data-structures\queues\queue\using-objects\queue-object-with-class.js">
-        <metrics statements="25" coveredstatements="25" conditionals="4" coveredconditionals="4" methods="9" coveredmethods="9"/>
+        <metrics statements="22" coveredstatements="22" conditionals="4" coveredconditionals="4" methods="9" coveredmethods="9"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="9" count="13" type="stmt"/>
-        <line num="10" count="13" type="stmt"/>
-        <line num="11" count="13" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="22" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="27" count="6" type="stmt"/>
-        <line num="31" count="11" type="stmt"/>
-        <line num="32" count="11" type="stmt"/>
-        <line num="33" count="11" type="stmt"/>
-        <line num="37" count="3" type="stmt"/>
-        <line num="41" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="16" type="stmt"/>
+        <line num="10" count="16" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="21" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="26" count="5" type="stmt"/>
+        <line num="30" count="12" type="stmt"/>
+        <line num="31" count="12" type="stmt"/>
+        <line num="32" count="12" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="40" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="41" count="1" type="stmt"/>
         <line num="42" count="1" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
         <line num="45" count="1" type="stmt"/>
-        <line num="46" count="2" type="stmt"/>
-        <line num="48" count="1" type="stmt"/>
-        <line num="52" count="1" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
       </file>
     </package>
     <package name="data-structures.stacks.using-arrays">

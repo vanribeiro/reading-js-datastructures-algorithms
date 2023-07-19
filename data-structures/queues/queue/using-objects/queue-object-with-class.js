@@ -7,7 +7,6 @@ class Queue {
 
     enqueue(item) {
         this.items[this.count] = item;
-        console.log(this.count)
         this.count++;
     }
 
@@ -39,8 +38,6 @@ class Queue {
 
     toString() {
         if(this.isEmpty()) return '';
-        console.log(this.items)
-        console.log(this.lowestCount)
         let objString = `${this.items[this.lowestCount]}`;
         for (let index = this.lowestCount + 1; index < this.count; index++) {
             objString = `${objString}, ${this.items[index]}`;
