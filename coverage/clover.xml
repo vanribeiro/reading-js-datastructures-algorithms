@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1689719716023" clover="3.2.0">
-  <project timestamp="1689719716023" name="All files">
+<coverage generated="1689724592973" clover="3.2.0">
+  <project timestamp="1689724592973" name="All files">
     <metrics statements="174" coveredstatements="174" conditionals="71" coveredconditionals="71" methods="51" coveredmethods="51" elements="296" coveredelements="296" complexity="0" loc="174" ncloc="174" packages="6" files="6" classes="6"/>
     <package name="data-structures.linked-lists.classes">
       <metrics statements="59" coveredstatements="59" conditionals="25" coveredconditionals="25" methods="13" coveredmethods="13"/>
