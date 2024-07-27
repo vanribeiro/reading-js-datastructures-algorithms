@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "module": "NodeNext",
+      "noImplicitAny": true,
+      "outDir": "dist",
+      "removeComments": true,
+      "preserveConstEnums": true,
+      "sourceMap": true
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*test.ts",
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
