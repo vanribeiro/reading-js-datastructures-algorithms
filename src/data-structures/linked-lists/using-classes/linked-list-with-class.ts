@@ -3,19 +3,23 @@ import Node from "../../../models/linked-list-models.js";
 
 class LinkedList {
 
-    constructor(equalsFn = defaultEquals) {
+    count: number;
+    head: Node;
+    equals: Function;
+
+    constructor(equals = defaultEquals) {
         this.count = 0;
         this.head = null;
-        this.equalsFn = equalsFn;
+        this.equals = equals;
     }
 
-    isAValidIndex(index){
+    isAValidIndex(index: number): boolean {
         return index >= 0 && index < this.count;
     }
 
-    push(element){
-        const node = new Node(element);
-        let current;
+    push(element: string | number | object): void {
+        const node: Node = new Node(element);
+        let current: Node;
         if(this.head === null) {
             this.head = node;
         } else {
@@ -28,16 +32,16 @@ class LinkedList {
         this.count++;
     }
 
-    insertElementAt(element, index){
+    insertElementAt(element: string | number | object, index: number): boolean {
         if(this.isAValidIndex(index)){
-            const node = new Node(element);
+            const node: Node = new Node(element);
             if(index === 0){
-                const current = this.head; 
+                const current: Node = this.head; 
                 node.next = current; 
                 this.head = node; 
             } else {
-                const previous = this.getElementAt(index - 1); 
-                const current = previous.next; 
+                const previous: Node = this.getElementAt(index - 1); 
+                const current: Node = previous.next; 
                 node.next = current; 
                 previous.next = node;
             }
@@ -46,13 +50,13 @@ class LinkedList {
         return false;
     }
     
-    removeAt(index){
+    removeAt(index: number): string | number | object | undefined {
         if(this.isAValidIndex(index)){
-            let current = this.head;
+            let current: Node = this.head;
             if(index === 0) {
                 this.head = current.next;
             } else {
-                const previous = this.getElementAt(index - 1);
+                const previous: Node = this.getElementAt(index - 1);
                 current = previous.next;    
                 previous.next = current.next;
             }
@@ -62,23 +66,23 @@ class LinkedList {
         return undefined;
     }
 
-    remove(element){
-        const index = this.indexOf(element);
+    remove(element: string | number | object): string | number | object | undefined {
+        const index: number = this.indexOf(element);
         return this.removeAt(index);
     }
 
-    indexOf(element){
-        let current = this.head;
+    indexOf(element: string | number | object): number {
+        let current: Node = this.head;
         for (let i = 0; i < this.count && current.element != null; i++) {
-            if(this.equalsFn(element, current.element)) return i;
+            if(this.equals(element, current.element)) return i;
             current = current.next;
         }
         return -1;
     }
     
-    getElementAt(index){
+    getElementAt(index: number): Node | undefined  {
         if(this.isAValidIndex(index)){
-            let node = this.head;
+            let node: Node = this.head;
             for (let i = 0; i < index && node != null; i++) {
                 node = node.next;                    
             }
@@ -87,14 +91,14 @@ class LinkedList {
         return undefined;
     }
 
-    getHead() {
+    getHead(): Node | undefined {
         return this.head;
     }
 
-    toString() {
+    toString(): string {
         if(this.isEmpty()) return '';
-        let objString = `${this.head.element}`;
-        let current = this.head.next;
+        let objString: string = `${this.head.element}`;
+        let current: Node = this.head.next;
         for (let i = 0; i < this.size() && current !== null ; i++) {
             objString = `${objString}, ${current.element}`;
             current = current.next;
@@ -102,15 +106,15 @@ class LinkedList {
         return objString;
     }
 
-    size() {
+    size(): number {
         return this.count;
     }
 
-    isEmpty() {
+    isEmpty(): boolean {
         return this.size() === 0;
     }
 
-    clear(){
+    clear(): void  {
         this.count = 0;
         this.head = null;
     }

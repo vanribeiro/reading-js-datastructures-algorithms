@@ -1,42 +1,48 @@
+import { IndexNumber } from "../../../../types/data-structures.js";
+
 class Queue {
+    count: number;
+    items: IndexNumber;
+    lowestCount: number;
+
     constructor() {
         this.count = 0;
         this.items = {};
         this.lowestCount = 0;
     }
 
-    enqueue(item) {
+    enqueue(item: number | string): void {
         this.items[this.count] = item;
         this.count++;
     }
 
-    dequeue(){
+    dequeue():string | number | object {
         const value = this.items[this.lowestCount];
         delete this.items[this.lowestCount];
         this.lowestCount++;
         return value;
     }
 
-    peek() {
+    peek(): string | number | object | undefined {
         if(this.isEmpty()) return undefined;
         return this.items[this.lowestCount];
     }
 
-    isEmpty() {
+    isEmpty(): boolean {
         return this.count - this.lowestCount === 0;
     }
 
-    clear() {
+    clear(): void {
         this.items = {};
         this.count = 0;
         this.lowestCount = 0;
     }
 
-    size () {
+    size (): number {
         return this.count - this.lowestCount;
     }
 
-    toString() {
+    toString(): string {
         if(this.isEmpty()) return '';
         let objString = `${this.items[this.lowestCount]}`;
         for (let index = this.lowestCount + 1; index < this.count; index++) {
@@ -45,7 +51,7 @@ class Queue {
         return `[${objString}]`;
     }
 
-    getItems() {
+    getItems(): IndexNumber | object  {
         return this.items;
     }
 }

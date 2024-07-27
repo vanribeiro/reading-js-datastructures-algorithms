@@ -1,10 +1,15 @@
+import { IndexNumber } from "../../../types/data-structures.js";
+
 class Stack {
+    count: number;
+    items: IndexNumber;
+
     constructor() {
         this.count = 0;
         this.items = {};
     }
 
-    push(item){
+    push(item: number | string | object): void {
         this.items[this.count] = item;
         this.count++;
     }
@@ -12,7 +17,7 @@ class Stack {
     pop() {
         if(this.isEmpty()) return undefined;
         this.count--;
-        const result = this.items[this.count];
+        const result: any = this.items[this.count];
         delete this.items[this.count]
         return result;
     }
@@ -37,7 +42,7 @@ class Stack {
 
     toString() {
         if(this.isEmpty()) return '';
-        let objString = `${this.items[0]}`;
+        let objString: string = `${this.items[0]}`;
         for (let index = 1; index < this.count; index++) {
             objString = `${objString}, ${this.items[index]}`;
         }

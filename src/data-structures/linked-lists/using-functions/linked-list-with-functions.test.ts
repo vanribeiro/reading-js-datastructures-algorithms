@@ -7,6 +7,11 @@ const linkedList = LinkedList();
  * list: banana, maçã, pêra, abacaxi, caqui, uva
  */
 
+interface NodeTest {
+	element: string;
+	next: NodeTest | null;
+}
+
 describe("Data Structure: Linked List with Functions", () => {
 
 	describe('when the list is empty', () => {
@@ -47,7 +52,9 @@ describe("Data Structure: Linked List with Functions", () => {
 		});
 
 		test("should return a specific element in the list", () => {
-			const list = {
+
+			
+			const list: NodeTest = {
 				element: "banana",
 				next: {
 					element: "maçã",
@@ -128,7 +135,7 @@ describe("Data Structure: Linked List with Functions", () => {
 	describe('when the list is changed', () => {
 		
 		test("should return the list head", () => {
-			const list = {
+			const list: NodeTest = {
 				element: "banana",
 				next: {
 					element: "pêra",
@@ -155,7 +162,7 @@ describe("Data Structure: Linked List with Functions", () => {
 		});
 	
 		test("should return ameixa as first element in the list", () => {
-			const list = {"element": "ameixa", "next": {"element": "morango", "next": null}};
+			const list: NodeTest = {"element": "ameixa", "next": {"element": "morango", "next": null}};
 	
 			linkedList.push('morango');
 			linkedList.insertElementAt('ameixa', 0);

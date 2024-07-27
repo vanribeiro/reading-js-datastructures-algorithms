@@ -1,4 +1,9 @@
+import { IndexNumber } from "../../../../types/data-structures.js";
+
 class Deque {
+    count: number;
+    items: IndexNumber;
+    lowestCount: number;
 
     constructor() {
         this.items = {};
@@ -6,12 +11,12 @@ class Deque {
         this.lowestCount = 0;
     }
 
-    addBack(item){
+    addBack(item: number | string): void {
         this.items[this.count] = item;
         this.count++;
     }
 
-    addFront(item) {
+    addFront(item: number | string): void {
         if (this.isEmpty()) {
             this.addBack(item);
         } else if(this.lowestCount > 0) {
@@ -28,7 +33,7 @@ class Deque {
         }
     }
 
-    removeBack(){
+    removeBack(): string | number | object {
         if(this.isEmpty()) return undefined;
         this.count--;
         const value = this.items[this.count];
@@ -36,7 +41,7 @@ class Deque {
         return value;
     }
 
-    removeFront(){
+    removeFront(): string | number | object {
         const value = this.items[this.lowestCount];
         delete this.items[this.lowestCount];
         this.lowestCount++;
@@ -44,31 +49,31 @@ class Deque {
     }
 
 
-    peekBack(){
+    peekBack(): string | number | object {
         if(this.isEmpty()) return undefined;
         return this.items[this.count - 1];
     }
 
-    peekFront(){
+    peekFront(): string | number | object{
         if(this.isEmpty()) return undefined;
         return this.items[this.lowestCount];
     }
 
-    clear() {
+    clear(): void {
         this.items = [];
         this.count = 0;
         this.lowestCount = 0;
     }
 
-    size() {
+    size(): number {
         return this.count;
     }
 
-    isEmpty() {
+    isEmpty(): boolean {
         return this.count - this.lowestCount === 0;
     }
 
-    toString() {
+    toString(): string {
         if(this.isEmpty()) return '';
         let objString = `${this.items[this.lowestCount]}`;
         for (let index = this.lowestCount + 1; index < this.count; index++) {

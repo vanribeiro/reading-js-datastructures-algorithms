@@ -1,4 +1,4 @@
-function defaultEquals(a, b) {
+function defaultEquals(a: unknown, b: unknown): boolean {
     return a === b;
 }
 

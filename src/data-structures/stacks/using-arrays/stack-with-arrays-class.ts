@@ -1,9 +1,11 @@
 class Stack {
+    items: Array<unknown>;
+
     constructor() {
         this.items = [];
     }
 
-    push(item) {
+    push(item: unknown) {
         this.items.push(item);
     }
 

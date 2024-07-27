@@ -1,5 +1,9 @@
 class Node {
-    constructor(element) {
+
+    element: string | number | object;
+    next: Node | null;
+    
+    constructor(element: any) {
         this.element = element;
         this.next = null;
     }

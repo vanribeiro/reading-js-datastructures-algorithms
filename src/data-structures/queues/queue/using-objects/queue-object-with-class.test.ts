@@ -89,7 +89,7 @@ describe('Data Structure: Queue (with class and objects', () => {
 
         test('should return the value when one element is dequeue', () => {
             populateQueue();
-            expect(queue.dequeue('mimi')).toBe('mimi');
+            expect(queue.dequeue()).toBe('mimi');
         });
 
     });

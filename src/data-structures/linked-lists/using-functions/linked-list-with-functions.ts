@@ -1,21 +1,21 @@
-// import Node from "../../../models/linked-list-models.js";
+import { Node } from "../../../types/data-structures.js";
 import { defaultEquals } from "../../../utils/index.js";
 
 function LinkedList() {
 
-    let count = 0;
-    let head = null;
+    let count: number = 0;
+    let head: Node = null;
 
-    function Node (element) {
+    function Node (element: string | number): Node {
         return {
             element: element,
             next: null
         }
     }
     
-    function push(element) {
-        const node = Node(element);
-        let current;
+    function push(element: string | number): void {
+        const node: Node = Node(element);
+        let current: Node;
         if(head === null) {
             head = node;
         } else {
@@ -28,9 +28,9 @@ function LinkedList() {
         count++
     }
 
-    function insertElementAt(element, index){
+    function insertElementAt(element: string | number, index: number): boolean {
         if(index >= 0 && index < count){
-            const node = Node(element);
+            const node: Node = Node(element);
             if(index === 0){
                 const current = head; 
                 node.next = current; 
@@ -46,9 +46,9 @@ function LinkedList() {
         return false;
     }
 
-    function removeAt(index) {
+    function removeAt(index: number): string | number | object | undefined {
         if(index >= 0 && index < count){
-            let current = head;
+            let current: Node = head;
             if(index === 0) {
                 head = current.next;
             } else {
@@ -65,9 +65,9 @@ function LinkedList() {
         return undefined;
     }
 
-    function getElementAt(index) {
+    function getElementAt(index: number): Node | undefined {
         if(index >= 0 && index < count){
-            let node = head;
+            let node: any = head;
             for (let i = 0; i < index && node != null; i++) {
                 node = node.next;
             }
@@ -76,13 +76,13 @@ function LinkedList() {
         return undefined;
     }
 
-    function remove(element){
+    function remove(element: string | number): string | number | object | undefined {
         const index = indexOf(element);
         return removeAt(index);
     }
 
-    function indexOf(element){
-        let current = head;
+    function indexOf(element: string | number): number {
+        let current: any = head;
         for (let i = 0; i < count && current.element != null; i++) {
             if(defaultEquals(element, current.element)) return i;
             current = current.next;
@@ -90,10 +90,10 @@ function LinkedList() {
         return -1;
     }
 
-    function toString() {
+    function toString(): string {
         if(isEmpty()) return '';
-        let objString = `${head.element}`;
-        let current = head.next;
+        let objString: string = `${head.element}`;
+        let current: any = head.next;
         for (let i = 0; i < size() && current !== null ; i++) {
             objString = `${objString}, ${current.element}`;
             current = current.next;
@@ -101,23 +101,23 @@ function LinkedList() {
         return objString;
     }
 
-    function isAValidIndex(index) {
+    function isAValidIndex(index: number): boolean {
         return index >= 0 && index < count;
     }
 
-    function size() {
+    function size(): number {
         return count;
     }
 
-    function isEmpty() {
+    function isEmpty(): boolean {
         return size() === 0;
     }
 
-    function getHead() {
+    function getHead(): Node {
         return head;
     }
 
-    function clear () {
+    function clear (): void {
         count = 0;
         head = null;
     }

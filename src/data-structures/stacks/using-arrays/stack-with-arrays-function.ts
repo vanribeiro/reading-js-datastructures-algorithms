@@ -1,11 +1,11 @@
 function Stack() {
-    let items = [];
+    let items: Array<unknown> = [];
 
-    const push = (item) => items.push(item);
+    const push = (item: unknown) => items.push(item);
     const pop = () => items.pop();
     const peek = () => items.at(-1);
     const isEmpty = () => items.length === 0;
-    const clear = () => items = [] ;
+    const clear = (): void => {items = []} ;
     const size = () => items.length;
     const getItems = () => items;
     

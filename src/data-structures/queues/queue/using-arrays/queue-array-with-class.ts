@@ -1,33 +1,36 @@
 class Queue {
+
+    items: Array<unknown>;
+
     constructor() {
         this.items = [];
     }
 
-    enqueue(item) {
+    enqueue(item: unknown): void {
         this.items.push(item);
     }
 
-    dequeue(){
+    dequeue(): unknown  {
         return this.items.shift();
     }
 
-    peek() {
+    peek(): unknown {
         return this.items[0];
     }
 
-    isEmpty() {
+    isEmpty(): boolean {
         return this.items.length === 0;
     }
 
-    clear() {
+    clear(): void {
         this.items = [];
     }
 
-    size () {
+    size (): number {
         return this.items.length;
     }
 
-    getItems () {
+    getItems (): Array<unknown> {
         return this.items;
     }
 }

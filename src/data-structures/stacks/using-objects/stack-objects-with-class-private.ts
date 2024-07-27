@@ -1,8 +1,10 @@
-class Stack {        
-    #count = 0;
-    #items = {};
+import { IndexNumber } from "../../../types/data-structures.js";
 
-    push(item){
+class Stack {        
+    #count: number = 0;
+    #items: IndexNumber = {};
+
+    push(item: number | string | object): void {
         this.#items[this.#count] = item;
         this.#count++;
     }

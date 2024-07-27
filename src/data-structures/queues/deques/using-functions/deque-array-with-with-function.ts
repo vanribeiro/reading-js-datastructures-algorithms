@@ -1,9 +1,9 @@
 function Deque() {
-    const items = [];
+    const items: Array<unknown> = [];
 
-    const addFront = (item) => items.unshift(item);
+    const addFront = (item: unknown) => items.unshift(item);
     const removeFront = () => items.shift();
-    const addBack = (item) => items.push(item);
+    const addBack = (item: unknown) => items.push(item);
     const removeBack = () => items.pop();
     const clear = () => items.splice(0, items.length);
     const size = () => items.length;

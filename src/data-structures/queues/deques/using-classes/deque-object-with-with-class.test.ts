@@ -75,7 +75,7 @@ describe('Data Structure: Deque', () => {
 
     test('should add an item in front if the queue is not empty', () => {
         expect(deque.isEmpty()).toBeFalsy();
-        deque.removeFront('tangerina');
+        deque.removeFront();
         deque.addFront('ameixa');
         expect(deque.size()).toBe(2);
     });

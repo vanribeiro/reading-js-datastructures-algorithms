@@ -1,5 +1,6 @@
 import { describe, expect, test } from "@jest/globals";
 import LinkedList from "./linked-list-with-class.js";
+import Node from "../../../models/linked-list-models.js";
 
 const linkedList = new LinkedList();
 
@@ -47,7 +48,7 @@ describe("Data Structure: Linked List with Class", () => {
 		});
 
 		test("should return a specific element in the list", () => {
-			const list = {
+			const list: Node = {
 				element: "banana",
 				next: {
 					element: "maçã",
@@ -128,7 +129,7 @@ describe("Data Structure: Linked List with Class", () => {
 	describe('when the list is changed', () => {
 		
 		test("should return the list head", () => {
-			const list = {
+			const list: Node = {
 				element: "banana",
 				next: {
 					element: "pêra",
@@ -155,7 +156,7 @@ describe("Data Structure: Linked List with Class", () => {
 		});
 	
 		test("should return ameixa as first element in the list", () => {
-			const list = {"element": "ameixa", "next": {"element": "morango", "next": null}};
+			const list: Node = {"element": "ameixa", "next": {"element": "morango", "next": null}};
 	
 			linkedList.push('morango');
 			linkedList.insertElementAt('ameixa', 0);
