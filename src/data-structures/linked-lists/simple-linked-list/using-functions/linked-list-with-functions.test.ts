@@ -1,14 +1,17 @@
-import { describe, expect, test } from "@jest/globals";
-import LinkedList from "./linked-list-with-class";
-import Node from "../../../models/linked-list-models";
+import LinkedList from "./linked-list-with-functions";
 
-const linkedList = new LinkedList();
+const linkedList = LinkedList();
 
 /**
  * list: banana, maçã, pêra, abacaxi, caqui, uva
  */
 
-describe("Data Structure: Linked List with Class", () => {
+interface NodeTest {
+	element: string;
+	next: NodeTest | null;
+}
+
+describe("Data Structure: Linked List with Functions", () => {
 
 	describe('when the list is empty', () => {
 
@@ -48,7 +51,9 @@ describe("Data Structure: Linked List with Class", () => {
 		});
 
 		it("should return a specific element in the list", () => {
-			const list: Node = {
+
+			
+			const list: NodeTest = {
 				element: "banana",
 				next: {
 					element: "maçã",
@@ -129,7 +134,7 @@ describe("Data Structure: Linked List with Class", () => {
 	describe('when the list is changed', () => {
 		
 		it("should return the list head", () => {
-			const list: Node = {
+			const list: NodeTest = {
 				element: "banana",
 				next: {
 					element: "pêra",
@@ -156,7 +161,7 @@ describe("Data Structure: Linked List with Class", () => {
 		});
 	
 		it("should return ameixa as first element in the list", () => {
-			const list: Node = {"element": "ameixa", "next": {"element": "morango", "next": null}};
+			const list: NodeTest = {"element": "ameixa", "next": {"element": "morango", "next": null}};
 	
 			linkedList.push('morango');
 			linkedList.insertElementAt('ameixa', 0);
