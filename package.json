@@ -1,12 +1,13 @@
 {
   "name": "reading-javascript-datastructures-algorithms",
   "version": "1.0.0",
-  "description": "Aos poucos estou o lendo o livro [\"Estruturas de Dados e Algoritmos com JavaScript: Escreva um Código JavaScript Complexo e Eficaz Usando a Mais Recente ECMAScript\"](https://www.amazon.com.br/Entendendo-Algoritmos-Ilustrado-Programadores-Curiosos/dp/8575225634/ref=pd_bxgy_img_sccl_1/147-0238609-2083947?pd_rd_w=QgyQf&content-id=amzn1.sym.758f3509-df88-4265-806c-565a738dc05d&pf_rd_p=758f3509-df88-4265-806c-565a738dc05d&pf_rd_r=GGXC54GAPHGFF7F59MS3&pd_rd_wg=yQv2c&pd_rd_r=0ae4d4c2-79c5-4f19-b8e9-91dd49128ab3&pd_rd_i=8575225634&psc=1), da  Loiane Groner, e este repósitorio contém algum exercício e prática que estou fazendo com base na leitura dos capítulos deste livro.",
-  "main": "index.js",
-  "type": "module",
+  "description": "Repósitorio práticos da minha leitura do livro \"Estruturas de Dados e Algoritmos com JavaScript: Escreva um Código JavaScript Complexo e Eficaz Usando a Mais Recente ECMAScript\", de Loiane Groner.",
   "scripts": {
-    "test": "jest --watchAll",
-    "test-coverage": "jest --watchAll --coverage"
+    "dev": "tsc",
+    "test": "jest --coverage=false",
+    "test:w": "jest --watchAll --coverage=false",
+    "test:c": "jest --coverage",
+    "test:w-c": "jest --watchAll --coverage"
   },
   "repository": {
     "type": "git",
@@ -21,8 +22,16 @@
   "homepage": "https://github.com/vanribeiro/reading-js-datastructures-algorithms#readme",
   "devDependencies": {
     "@babel/core": "^7.21.4",
+    "@babel/parser": "^7.25.0",
+    "@babel/plugin-transform-typescript": "^7.25.0",
     "@babel/preset-env": "^7.21.4",
+    "@babel/preset-typescript": "^7.24.7",
+    "@babel/types": "^7.25.0",
+    "@jest/globals": "^29.7.0",
+    "@types/jest": "^29.5.12",
     "babel-jest": "^29.5.0",
-    "jest": "^29.5.0"
+    "jest": "^29.5.0",
+    "ts-jest": "^29.2.3",
+    "typescript": "^5.5.4"
   }
 }
