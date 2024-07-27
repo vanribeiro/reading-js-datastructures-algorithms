@@ -1,10 +1,10 @@
-import { defaultEquals } from "../../../utils/index.js";
-import Node from "../../../models/linked-list-models.js";
+import { defaultEquals } from "../../../utils";
+import Node from "../../../models/linked-list-models";
 
 class LinkedList {
 
     count: number;
-    head: Node;
+    head: any;
     equals: Function;
 
     constructor(equals = defaultEquals) {
@@ -40,7 +40,7 @@ class LinkedList {
                 node.next = current; 
                 this.head = node; 
             } else {
-                const previous: Node = this.getElementAt(index - 1); 
+                const previous: any = this.getElementAt(index - 1); 
                 const current: Node = previous.next; 
                 node.next = current; 
                 previous.next = node;
@@ -56,7 +56,7 @@ class LinkedList {
             if(index === 0) {
                 this.head = current.next;
             } else {
-                const previous: Node = this.getElementAt(index - 1);
+                const previous: any = this.getElementAt(index - 1);
                 current = previous.next;    
                 previous.next = current.next;
             }
@@ -72,7 +72,7 @@ class LinkedList {
     }
 
     indexOf(element: string | number | object): number {
-        let current: Node = this.head;
+        let current: any = this.head;
         for (let i = 0; i < this.count && current.element != null; i++) {
             if(this.equals(element, current.element)) return i;
             current = current.next;
@@ -82,7 +82,7 @@ class LinkedList {
     
     getElementAt(index: number): Node | undefined  {
         if(this.isAValidIndex(index)){
-            let node: Node = this.head;
+            let node: any = this.head;
             for (let i = 0; i < index && node != null; i++) {
                 node = node.next;                    
             }
@@ -98,7 +98,7 @@ class LinkedList {
     toString(): string {
         if(this.isEmpty()) return '';
         let objString: string = `${this.head.element}`;
-        let current: Node = this.head.next;
+        let current: any = this.head.next;
         for (let i = 0; i < this.size() && current !== null ; i++) {
             objString = `${objString}, ${current.element}`;
             current = current.next;

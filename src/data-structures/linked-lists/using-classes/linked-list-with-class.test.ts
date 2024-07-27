@@ -1,6 +1,6 @@
 import { describe, expect, test } from "@jest/globals";
-import LinkedList from "./linked-list-with-class.js";
-import Node from "../../../models/linked-list-models.js";
+import LinkedList from "./linked-list-with-class";
+import Node from "../../../models/linked-list-models";
 
 const linkedList = new LinkedList();
 

@@ -1,11 +1,16 @@
 {
     "compilerOptions": {
-      "module": "NodeNext",
-      "noImplicitAny": true,
-      "outDir": "dist",
-      "removeComments": true,
-      "preserveConstEnums": true,
-      "sourceMap": true
+        "target": "ES2020",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "lib": ["ES2020"],
+        "strict": true,
+        "esModuleInterop": true,
+        "noImplicitAny": true,
+        "outDir": "dist",
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true
     },
     "include": [
         "src/**/*.ts",

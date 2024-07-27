@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import LinkedList from "./linked-list-with-functions.js";
+import LinkedList from "./linked-list-with-functions";
 
 const linkedList = LinkedList();
 

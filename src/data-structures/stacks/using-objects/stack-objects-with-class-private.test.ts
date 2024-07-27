@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import Stack from "./stack-objects-with-class-private.js";
+import Stack from "./stack-objects-with-class-private";
 
 const stack = new Stack();
 

@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import Stack from "./stack-with-arrays-class.js";
+import Stack from "./stack-with-arrays-class";
 
 const stack = new Stack();
 

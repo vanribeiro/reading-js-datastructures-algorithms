@@ -1,4 +1,4 @@
-import { Deque } from './deque-array-with-with-function.js';
+import { Deque } from './deque-array-with-with-function';
 
 const deque = Deque();
 describe('Data Structure: Deque', () => {

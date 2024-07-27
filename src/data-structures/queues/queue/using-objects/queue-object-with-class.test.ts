@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import Queue from "./queue-object-with-class.js";
+import Queue from "./queue-object-with-class";
 
 const queue = new Queue();
 

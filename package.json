@@ -2,8 +2,6 @@
   "name": "reading-javascript-datastructures-algorithms",
   "version": "1.0.0",
   "description": "Repósitorio práticos da minha leitura do livro \"Estruturas de Dados e Algoritmos com JavaScript: Escreva um Código JavaScript Complexo e Eficaz Usando a Mais Recente ECMAScript\", de Loiane Groner.",
-  "main": "index.js",
-  "type": "module",
   "scripts": {
     "dev": "tsc",
     "test": "jest --coverage=false",

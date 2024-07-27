@@ -1,4 +1,4 @@
-import { IndexNumber } from "../../../types/data-structures.js";
+import { IndexNumber } from "../../../types/data-structures";
 
 class Stack {
     count: number;

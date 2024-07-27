@@ -1,10 +1,10 @@
-import { Node } from "../../../types/data-structures.js";
-import { defaultEquals } from "../../../utils/index.js";
+import { Node } from "../../../types/data-structures";
+import { defaultEquals } from "../../../utils/index";
 
 function LinkedList() {
 
     let count: number = 0;
-    let head: Node = null;
+    let head: any = null;
 
     function Node (element: string | number): Node {
         return {
@@ -30,16 +30,16 @@ function LinkedList() {
 
     function insertElementAt(element: string | number, index: number): boolean {
         if(index >= 0 && index < count){
-            const node: Node = Node(element);
+            const node: any = Node(element);
             if(index === 0){
                 const current = head; 
                 node.next = current; 
                 head = node; 
             } else {
                 const previous = getElementAt(index - 1); 
-                const current = previous.next; 
+                const current = previous?.next; 
                 node.next = current; 
-                previous.next = node;
+                if(previous) previous.next = node;
             }
             return true
         }
@@ -48,7 +48,7 @@ function LinkedList() {
 
     function removeAt(index: number): string | number | object | undefined {
         if(index >= 0 && index < count){
-            let current: Node = head;
+            let current: any = head;
             if(index === 0) {
                 head = current.next;
             } else {
