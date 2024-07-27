@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "tsc",
     "test": "jest --coverage=false",
-    "test:watch": "jest --watchAll --coverage=false",
-    "test:w-coverage": "jest --watchAll --coverage"
+    "test:w": "jest --watchAll --coverage=false",
+    "test:c": "jest --coverage",
+    "test:w-c": "jest --watchAll --coverage"
   },
   "repository": {
     "type": "git",
