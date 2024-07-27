@@ -1,5 +1,5 @@
-import { Node } from "../../../types/data-structures";
-import { defaultEquals } from "../../../utils/index";
+import { Node } from "../../../../types/data-structures";
+import { defaultEquals } from "../../../../utils/index";
 
 function LinkedList() {
 
