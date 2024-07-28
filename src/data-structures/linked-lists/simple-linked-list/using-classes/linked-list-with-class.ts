@@ -1,5 +1,5 @@
 import { defaultEquals } from "../../../../utils";
-import Node from "../../../../models/linked-list-models";
+import Node from "../../../../models/Node";
 
 class LinkedList {
 
@@ -52,7 +52,7 @@ class LinkedList {
     
     removeAt(index: number): string | number | object | undefined {
         if(this.isAValidIndex(index)){
-            let current: Node = this.head;
+            let current = this.head;
             if(index === 0) {
                 this.head = current.next;
             } else {
