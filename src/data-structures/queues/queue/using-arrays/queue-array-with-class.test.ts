@@ -47,7 +47,7 @@ describe('Data Structure: Queue (with class and objects', () => {
             expect(queue.size()).toBe(3);
         });
 
-        it('should returns the object [\'mimi\', \'max\', \'dudu\'', () => {
+        it('should returns the object [\'mimi\', \'max\', \'dudu\'\]', () => {
             const expectation = ['mimi', 'max', 'dudu'];
             queue.enqueue('mimi');
             queue.enqueue('max');
