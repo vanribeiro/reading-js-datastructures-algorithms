@@ -2,7 +2,7 @@ import Stack from ".";
 
 const stack = new Stack();
 
-describe('Data Structure: Stack (with class and private modifier access)', () => {
+describe('Data Structure: Stack (private modifier access)', () => {
 
     describe('when the stack is empty', () => {
         

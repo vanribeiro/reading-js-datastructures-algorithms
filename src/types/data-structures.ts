@@ -9,7 +9,6 @@ type DoublyNode = Node & {
     prev: Node | null;
 }
 
-
 type IndexNumber = { 
     [index: number]: number | string | object;
 };
