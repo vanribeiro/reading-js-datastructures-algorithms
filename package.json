@@ -7,7 +7,7 @@
     "test": "jest --coverage=false",
     "test:w": "jest --watchAll --coverage=false",
     "test:c": "jest --coverage",
-    "test:w-c": "jest --watchAll --coverage"
+    "test:w-c": "jest --coverage --watchAll"
   },
   "repository": {
     "type": "git",

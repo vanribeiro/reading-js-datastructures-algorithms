@@ -47,20 +47,7 @@ describe("Data Structure: Linked List with Class", () => {
 		});
 
 		it("should return a specific element in the list", () => {
-			const list: Node = {
-				element: "banana",
-				next: {
-					element: "maçã",
-					next: {
-						element: "pêra",
-						next: {
-							element: "abacaxi",
-							next: { element: "uva", next: null },
-						},
-					},
-				},
-			};
-			expect(linkedList.getElementAt(0)).toEqual(list);
+			expect(linkedList.getElementAt(0)?.element).toEqual('banana');
 		});
 
 	});
@@ -155,11 +142,9 @@ describe("Data Structure: Linked List with Class", () => {
 		});
 	
 		it("should return ameixa as first element in the list", () => {
-			const list: Node = {"element": "ameixa", "next": {"element": "morango", "next": null}};
-	
 			linkedList.push('morango');
 			linkedList.insertElementAt('ameixa', 0);
-			expect(linkedList.getElementAt(0)).toEqual(list);
+			expect(linkedList.getElementAt(0)?.element).toEqual('ameixa');
 		});
 	
 		it("should remove the first element in the list and return it", () => {

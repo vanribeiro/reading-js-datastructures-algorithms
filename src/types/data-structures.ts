@@ -3,6 +3,7 @@ type Element = string | number | object;
 type Node = {
     element: Element
     next:  Node | null;
+    prev?:  Node | null;
 }
 
 type IndexNumber = { 
