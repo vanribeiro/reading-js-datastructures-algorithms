@@ -1,5 +1,4 @@
-import { describe, expect, test } from "@jest/globals";
-import Queue from "./queue-array-with-class";
+import Queue from ".";
 
 const queue = new Queue();
 

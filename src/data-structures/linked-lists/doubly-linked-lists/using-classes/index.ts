@@ -2,7 +2,7 @@ import DoublyNode from "../../../../models/DoublyNode";
 import Node from "../../../../models/Node";
 import { Element } from "../../../../types/data-structures";
 import { defaultEquals } from "../../../../utils";
-import LinkedList from "../../simple-linked-list/using-classes/linked-list-with-class";
+import LinkedList from "../../linked-lists/using-classes";
 
 class DoublyLinkedList extends LinkedList {
     tail: any = null;

@@ -1,4 +1,4 @@
-import LinkedListFn from "./linked-list-with-functions";
+import LinkedListFn from ".";
 
 const linkedListFn = LinkedListFn();
 

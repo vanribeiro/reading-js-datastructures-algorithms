@@ -1,4 +1,4 @@
-import DoublyLinkedList from "./doubly-linked-list-with-class";
+import DoublyLinkedList from ".";
 
 const doublyLinkedList = new DoublyLinkedList();
 

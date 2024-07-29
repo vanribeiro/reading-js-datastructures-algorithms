@@ -1,7 +1,6 @@
-import { describe, expect, test } from "@jest/globals";
-import Stack from "./stack-with-arrays-function";
+import Stack from ".";
 
-const stack = Stack();
+const stack = new Stack();
 
 describe('Data Structure: Stack (with class and private modifier access)', () => {
 
@@ -23,9 +22,10 @@ describe('Data Structure: Stack (with class and private modifier access)', () =>
             expect(stack.peek()).toBeUndefined();
         });
 
-        it('should return an empty array', () => {
+        it('should return nd empty array', () => {
             expect(stack.getItems()).toStrictEqual([]);
         });
+
     });
 
     describe('when the stack is being populated', () => {
@@ -40,11 +40,16 @@ describe('Data Structure: Stack (with class and private modifier access)', () =>
             stack.push(1);
             expect(stack.size()).toBe(3);
         });        
-        
+
+        it('should return an object [3, 2, 1] as the content stack', () => {
+            const stackArray = [3, 2, 1];
+            expect(stack.items).toStrictEqual(stackArray);
+        });
+
         it('should return 01 for the element that is on top of the stack', () => {
             expect(stack.peek()).toBe(1);
         });
-
+        
         it('should return an array with element [3, 2, 1]', () => {
             expect(stack.getItems()).toStrictEqual([3, 2, 1]);
         });

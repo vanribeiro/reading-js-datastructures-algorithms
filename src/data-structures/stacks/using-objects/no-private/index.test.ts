@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import Stack from "./stack-with-arrays-class";
+import Stack from ".";
 
 const stack = new Stack();
 
@@ -15,6 +15,10 @@ describe('Data Structure: Stack (with class and private modifier access)', () =>
             expect(stack.size()).toBe(0);
         });
 
+        it('should return an empty string when toString() method is called', () => {
+            expect(stack.toString()).toBe('');
+        });
+
         it('should return undefined when pop() method is called', () => {
             expect(stack.pop()).toBeUndefined();
         });
@@ -22,11 +26,6 @@ describe('Data Structure: Stack (with class and private modifier access)', () =>
         it('should return undefined when peek() method is called', () => {
             expect(stack.peek()).toBeUndefined();
         });
-
-        it('should return nd empty array', () => {
-            expect(stack.getItems()).toStrictEqual([]);
-        });
-
     });
 
     describe('when the stack is being populated', () => {
@@ -40,19 +39,26 @@ describe('Data Structure: Stack (with class and private modifier access)', () =>
             stack.push(2);
             stack.push(1);
             expect(stack.size()).toBe(3);
-        });        
+        });
 
-        it('should return an object [3, 2, 1] as the content stack', () => {
-            const stackArray = [3, 2, 1];
-            expect(stack.items).toStrictEqual(stackArray);
+        it('should return \"3, 2, 1\" as the content stack', () => {
+            const stackContent = '3, 2, 1';
+            expect(stack.toString()).toBe(stackContent);
+        });
+        
+
+        it('should return an object {0: 3, 1: 2, 2: 1} as the content stack', () => {
+            const stackObject = {
+                0: 3, 
+                1: 2, 
+                2: 1
+            };
+
+            expect(stack.items).toStrictEqual(stackObject);
         });
 
         it('should return 01 for the element that is on top of the stack', () => {
             expect(stack.peek()).toBe(1);
-        });
-        
-        it('should return an array with element [3, 2, 1]', () => {
-            expect(stack.getItems()).toStrictEqual([3, 2, 1]);
         });
 
     });

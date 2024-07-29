@@ -1,5 +1,5 @@
-import IStack from "../../../interfaces/IStack";
-import { Element } from "../../../types/data-structures";
+import IStack from "../../../../interfaces/IStack";
+import { Element } from "../../../../types/data-structures";
 
 class Stack implements IStack {
     items: Array<Element>;

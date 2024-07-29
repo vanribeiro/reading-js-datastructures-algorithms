@@ -1,4 +1,4 @@
-import DoublyLinkedListFn from "./doubly-linked-list-with-function";
+import DoublyLinkedListFn from ".";
 
 const doublyLinkedList = DoublyLinkedListFn();
 
