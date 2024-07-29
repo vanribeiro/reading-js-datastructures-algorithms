@@ -1,6 +1,7 @@
-import { IndexNumber } from "../../../../types/data-structures";
+import IQueue from "../../../../interfaces/IQueue";
+import { Element, IndexNumber } from "../../../../types/data-structures";
 
-class Queue {
+class Queue implements IQueue {
     count: number;
     items: IndexNumber;
     lowestCount: number;
@@ -11,19 +12,19 @@ class Queue {
         this.lowestCount = 0;
     }
 
-    enqueue(item: number | string): void {
+    enqueue(item: Element): void {
         this.items[this.count] = item;
         this.count++;
     }
 
-    dequeue():string | number | object {
+    dequeue():Element | undefined {
         const value = this.items[this.lowestCount];
         delete this.items[this.lowestCount];
         this.lowestCount++;
         return value;
     }
 
-    peek(): string | number | object | undefined {
+    peek(): Element | undefined {
         if(this.isEmpty()) return undefined;
         return this.items[this.lowestCount];
     }

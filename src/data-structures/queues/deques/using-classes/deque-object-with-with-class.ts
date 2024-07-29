@@ -1,6 +1,7 @@
-import { IndexNumber } from "../../../../types/data-structures";
+import IDeque from "../../../../interfaces/IDeque";
+import { Element, IndexNumber } from "../../../../types/data-structures";
 
-class Deque {
+class Deque implements IDeque {
     count: number;
     items: IndexNumber;
     lowestCount: number;
@@ -11,12 +12,12 @@ class Deque {
         this.lowestCount = 0;
     }
 
-    addBack(item: number | string): void {
+    addBack(item: Element): void {
         this.items[this.count] = item;
         this.count++;
     }
 
-    addFront(item: number | string): void {
+    addFront(item: Element): void {
         if (this.isEmpty()) {
             this.addBack(item);
         } else if(this.lowestCount > 0) {
@@ -33,7 +34,7 @@ class Deque {
         }
     }
 
-    removeBack(): string | number | object {
+    removeBack(): Element | undefined {
         if(this.isEmpty()) return undefined;
         this.count--;
         const value = this.items[this.count];
@@ -41,7 +42,7 @@ class Deque {
         return value;
     }
 
-    removeFront(): string | number | object {
+    removeFront(): Element {
         const value = this.items[this.lowestCount];
         delete this.items[this.lowestCount];
         this.lowestCount++;
@@ -49,12 +50,12 @@ class Deque {
     }
 
 
-    peekBack(): string | number | object {
+    peekBack(): Element | undefined {
         if(this.isEmpty()) return undefined;
         return this.items[this.count - 1];
     }
 
-    peekFront(): string | number | object{
+    peekFront(): Element | undefined{
         if(this.isEmpty()) return undefined;
         return this.items[this.lowestCount];
     }

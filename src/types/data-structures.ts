@@ -1,13 +1,16 @@
+type Element = string | number | object;
+
 type Node = {
-    element: string | number | object ;
+    element: Element
     next:  Node | null;
 }
 
 type IndexNumber = { 
-    [index: number]: number | string | object 
+    [index: number]: number | string | object;
 };
 
 export {
+    Element,
     Node,
     IndexNumber
 }

@@ -1,9 +1,11 @@
-function Deque() {
-    const items: Array<unknown> = [];
+import { Element } from "../../../../types/data-structures";
 
-    const addFront = (item: unknown) => items.unshift(item);
+function Deque() {
+    const items: Array<Element> = [];
+
+    const addFront = (item: Element) => items.unshift(item);
     const removeFront = () => items.shift();
-    const addBack = (item: unknown) => items.push(item);
+    const addBack = (item: Element) => items.push(item);
     const removeBack = () => items.pop();
     const clear = () => items.splice(0, items.length);
     const size = () => items.length;

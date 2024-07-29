@@ -1,20 +1,23 @@
-class Queue {
+import IQueue from "../../../../interfaces/IQueue";
+import { Element } from "../../../../types/data-structures";
 
-    items: Array<unknown>;
+class Queue implements IQueue {
+
+    items: Array<Element>;
 
     constructor() {
         this.items = [];
     }
 
-    enqueue(item: unknown): void {
+    enqueue(item: Element): void {
         this.items.push(item);
     }
 
-    dequeue(): unknown  {
+    dequeue(): Element | undefined {
         return this.items.shift();
     }
 
-    peek(): unknown {
+    peek(): Element {
         return this.items[0];
     }
 
@@ -30,7 +33,7 @@ class Queue {
         return this.items.length;
     }
 
-    getItems (): Array<unknown> {
+    getItems (): Array<Element> {
         return this.items;
     }
 }

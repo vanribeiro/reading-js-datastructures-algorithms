@@ -1,5 +1,6 @@
 import DoublyNode from "../../../../models/DoublyNode";
 import Node from "../../../../models/Node";
+import { Element } from "../../../../types/data-structures";
 import { defaultEquals } from "../../../../utils";
 import LinkedList from "../../simple-linked-list/using-classes/linked-list-with-class";
 
@@ -11,7 +12,7 @@ class DoublyLinkedList extends LinkedList {
         this.tail = null;
     }
 
-    push(element: string | number | object): void {
+    push(element: Element): void {
         const node = new DoublyNode(element);
         if(this.head === null){
             this.head = node;
@@ -38,7 +39,7 @@ class DoublyLinkedList extends LinkedList {
         return undefined;
     }
 
-    insertElementAt(element: string | number | object, index: number): boolean {
+    insertElementAt(element: Element, index: number): boolean {
         if(this.isAValidIndex(index)){
             
             const node = new DoublyNode(element);
@@ -137,7 +138,7 @@ class DoublyLinkedList extends LinkedList {
         return objString;
     }
 
-    indexOf(element: string | number | object): number {
+    indexOf(element: Element): number {
         let current = this.head;
         let index = 0;
         while(current !== null){
