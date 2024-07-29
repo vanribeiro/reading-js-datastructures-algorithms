@@ -1,4 +1,4 @@
-import { Element } from "../../../types/data-structures";
+import { Element } from "../../../../types/data-structures";
 
 function Stack() {
     let items: Array<Element> = [];

@@ -2,10 +2,14 @@ import { Element, Node } from "../../../../types/data-structures";
 import { defaultEquals } from "../../../../utils/index";
 import ILinkedList from "../../../../interfaces/ILinkedList";
 
-function LinkedList(): ILinkedList {
+function LinkedListFn(): ILinkedList {
 
     let count: number = 0;
     let head: any = null;
+
+    function isAValidIndex(index: number): boolean {
+        return index >= 0 && index <= count;
+    }
 
     function LinkedListNode (element: Element): Node {
         return {
@@ -30,7 +34,8 @@ function LinkedList(): ILinkedList {
     }
 
     function insertElementAt(element: Element, index: number): boolean {
-        if(index >= 0 && index < count){
+
+        if(isAValidIndex(index)){
             const node: any = LinkedListNode(element);
             if(index === 0){
                 const current = head; 
@@ -48,7 +53,7 @@ function LinkedList(): ILinkedList {
     }
 
     function removeAt(index: number): Element | undefined {
-        if(index >= 0 && index < count){
+        if(isAValidIndex(index)){
             let current: any = head;
             if(index === 0) {
                 head = current.next;
@@ -67,7 +72,7 @@ function LinkedList(): ILinkedList {
     }
 
     function getElementAt(index: number): Node | undefined {
-        if(index >= 0 && index < count){
+        if(isAValidIndex(index)){
             let node = head;
             for (let i = 0; i < index && node != null; i++) {
                 node = node.next;
@@ -102,10 +107,6 @@ function LinkedList(): ILinkedList {
         return objString;
     }
 
-    function isAValidIndex(index: number): boolean {
-        return index >= 0 && index < count;
-    }
-
     function size(): number {
         return count;
     }
@@ -132,4 +133,4 @@ function LinkedList(): ILinkedList {
     }
 }
 
-export default LinkedList;
+export default LinkedListFn;

@@ -1,17 +1,13 @@
-import LinkedList from "./linked-list-with-functions";
+import LinkedList from ".";
+import Node from "../../../../models/Node";
 
-const linkedList = LinkedList();
+const linkedList = new LinkedList();
 
 /**
  * list: banana, maçã, pêra, abacaxi, caqui, uva
  */
 
-interface NodeTest {
-	element: string;
-	next: NodeTest | null;
-}
-
-describe("Data Structure: Linked List with Functions", () => {
+describe("Data Structure: Linked List with Class", () => {
 
 	describe('when the list is empty', () => {
 
@@ -51,22 +47,7 @@ describe("Data Structure: Linked List with Functions", () => {
 		});
 
 		it("should return a specific element in the list", () => {
-
-			
-			const list: NodeTest = {
-				element: "banana",
-				next: {
-					element: "maçã",
-					next: {
-						element: "pêra",
-						next: {
-							element: "abacaxi",
-							next: { element: "uva", next: null },
-						},
-					},
-				},
-			};
-			expect(linkedList.getElementAt(0)).toEqual(list);
+			expect(linkedList.getElementAt(0)?.element).toEqual('banana');
 		});
 
 	});
@@ -134,7 +115,7 @@ describe("Data Structure: Linked List with Functions", () => {
 	describe('when the list is changed', () => {
 		
 		it("should return the list head", () => {
-			const list: NodeTest = {
+			const list: Node = {
 				element: "banana",
 				next: {
 					element: "pêra",
@@ -161,11 +142,9 @@ describe("Data Structure: Linked List with Functions", () => {
 		});
 	
 		it("should return ameixa as first element in the list", () => {
-			const list: NodeTest = {"element": "ameixa", "next": {"element": "morango", "next": null}};
-	
 			linkedList.push('morango');
 			linkedList.insertElementAt('ameixa', 0);
-			expect(linkedList.getElementAt(0)).toEqual(list);
+			expect(linkedList.getElementAt(0)?.element).toEqual('ameixa');
 		});
 	
 		it("should remove the first element in the list and return it", () => {

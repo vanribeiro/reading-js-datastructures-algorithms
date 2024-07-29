@@ -1,4 +1,4 @@
-import Deque from './deque-object-with-with-class';
+import Deque from '.';
 
 const deque = new Deque();
 

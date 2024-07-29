@@ -5,6 +5,11 @@ type Node = {
     next:  Node | null;
 }
 
+type DoublyNode = Node & {
+    prev: Node | null;
+}
+
+
 type IndexNumber = { 
     [index: number]: number | string | object;
 };
@@ -12,5 +17,6 @@ type IndexNumber = {
 export {
     Element,
     Node,
-    IndexNumber
+    IndexNumber,
+    DoublyNode,
 }

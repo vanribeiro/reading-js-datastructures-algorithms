@@ -1,6 +1,6 @@
-import DoublyLinkedList from "./doubly-linked-list-with-class";
+import DoublyLinkedListFn from ".";
 
-const doublyLinkedList = new DoublyLinkedList();
+const doublyLinkedList = DoublyLinkedListFn();
 
 /**
  * list: banana, maçã, pêra, abacaxi, caqui, uva
@@ -176,6 +176,15 @@ describe("Data Structure: Linked List with Class", () => {
 			expect(doublyLinkedList.size()).toBe(4);
             expect(doublyLinkedList.removeAt(3)).toBe('uva');
 		});
+
+		it("should return add in first position using insertAt when list is empty", () => {
+			doublyLinkedList.clear();
+			expect(doublyLinkedList.size()).toBe(0);
+            expect(doublyLinkedList.insertElementAt('acerola', 0)).toBeTruthy();
+			expect(doublyLinkedList.size()).toBe(1);
+			expect(doublyLinkedList.toString()).toBe('acerola');
+			expect(doublyLinkedList.removeAt(0)).toBe('acerola');
+        });
 	});
 
 });
