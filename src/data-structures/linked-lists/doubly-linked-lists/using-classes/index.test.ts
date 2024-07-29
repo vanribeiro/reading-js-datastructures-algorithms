@@ -6,7 +6,7 @@ const doublyLinkedList = new DoublyLinkedList();
  * list: banana, maçã, pêra, abacaxi, caqui, uva
  */
 
-describe("Data Structure: Linked List with Class", () => {
+describe("Data Structure: Doubly Linked List with Class", () => {
 
 	describe('when the list is empty', () => {
 
