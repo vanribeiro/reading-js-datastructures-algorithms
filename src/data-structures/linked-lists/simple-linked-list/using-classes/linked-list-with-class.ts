@@ -1,7 +1,9 @@
 import { defaultEquals } from "../../../../utils";
 import Node from "../../../../models/Node";
+import ILinkedList from "../../../../interfaces/ILinkedList";
+import { Element } from "../../../../types/data-structures";
 
-class LinkedList {
+class LinkedList implements ILinkedList {
 
     count: number;
     head: any;
@@ -17,7 +19,7 @@ class LinkedList {
         return index >= 0 && index < this.count;
     }
 
-    push(element: string | number | object): void {
+    push(element: Element): void {
         const node: Node = new Node(element);
         let current: Node;
         if(this.head === null) {
@@ -32,7 +34,7 @@ class LinkedList {
         this.count++;
     }
 
-    insertElementAt(element: string | number | object, index: number): boolean {
+    insertElementAt(element: Element, index: number): boolean {
         if(this.isAValidIndex(index)){
             const node: Node = new Node(element);
             if(index === 0){
@@ -50,7 +52,7 @@ class LinkedList {
         return false;
     }
     
-    removeAt(index: number): string | number | object | undefined {
+    removeAt(index: number): Element | undefined {
         if(this.isAValidIndex(index)){
             let current = this.head;
             if(index === 0) {
@@ -66,12 +68,12 @@ class LinkedList {
         return undefined;
     }
 
-    remove(element: string | number | object): string | number | object | undefined {
+    remove(element: Element): Element | undefined {
         const index: number = this.indexOf(element);
         return this.removeAt(index);
     }
 
-    indexOf(element: string | number | object): number {
+    indexOf(element: Element): number {
         let current: any = this.head;
         for (let i = 0; i < this.count && current.element != null; i++) {
             if(this.equals(element, current.element)) return i;

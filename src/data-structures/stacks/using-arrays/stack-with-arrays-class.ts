@@ -1,35 +1,38 @@
-class Stack {
-    items: Array<unknown>;
+import IStack from "../../../interfaces/IStack";
+import { Element } from "../../../types/data-structures";
+
+class Stack implements IStack {
+    items: Array<Element>;
 
     constructor() {
         this.items = [];
     }
 
-    push(item: unknown) {
+    push(item: Element) {
         this.items.push(item);
     }
 
-    pop() {
+    pop(): Element | undefined {
         return this.items.pop();
     }
 
-    peek() {
+    peek(): Element | undefined {
         return this.items.at(-1);
     }
 
-    isEmpty() {
+    isEmpty(): boolean {
         return this.items.length === 0;
     }
 
-    clear() {
+    clear(): void {
         this.items = [];
     }
 
-    size() {
+    size(): number {
         return this.items.length;
     }
 
-    getItems() {
+    getItems(): Array<Element> {
         return this.items;
     }
 }

@@ -1,15 +1,16 @@
-import { IndexNumber } from "../../../types/data-structures";
+import IStack from "../../../interfaces/IStack";
+import { Element, IndexNumber } from "../../../types/data-structures";
 
-class Stack {        
+class Stack implements IStack {        
     #count: number = 0;
     #items: IndexNumber = {};
 
-    push(item: number | string | object): void {
+    push(item: Element): void {
         this.#items[this.#count] = item;
         this.#count++;
     }
 
-    pop() {
+    pop(): Element | undefined {
         if(this.isEmpty()) return undefined;
         this.#count--;
         const result = this.#items[this.#count];
@@ -17,25 +18,25 @@ class Stack {
         return result;
     }
 
-    peek() {
+    peek(): Element | undefined {
         if(this.isEmpty()) return undefined;
         return this.#items[this.#count - 1];
     }
 
-    isEmpty(){
+    isEmpty(): boolean  {
         return this.#count === 0;
     }
 
-    clear() {
+    clear(): void {
         this.#items = {};
         this.#count = 0;
     }
 
-    size () {
+    size (): number  {
         return this.#count;
     }
 
-    toString() {
+    toString(): string  {
         if(this.isEmpty()) return '';
         let objString = `${this.#items[0]}`;
         for (let index = 1; index < this.#count; index++) {
@@ -44,7 +45,7 @@ class Stack {
         return objString;
     }
 
-    get items () {
+    get items(): IndexNumber {
         return this.#items;
     }
 
