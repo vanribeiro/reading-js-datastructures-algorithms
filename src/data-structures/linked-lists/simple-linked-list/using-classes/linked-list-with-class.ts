@@ -16,7 +16,7 @@ class LinkedList implements ILinkedList {
     }
 
     isAValidIndex(index: number): boolean {
-        return index >= 0 && index < this.count;
+        return index >= 0 && index <= this.count;
     }
 
     push(element: Element): void {

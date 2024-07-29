@@ -138,7 +138,7 @@ describe("Data Structure: Linked List with Class", () => {
 			expect(doublyLinkedList.toString()).toBe("banana, pêra, caqui, laranja, uva, acerola");
 		});
 
-		it.skip("should return an string with elements in the reversed order", () => {
+		it("should return an string with elements in the reversed order", () => {
 			expect(doublyLinkedList.inversetoString()).toBe("acerola, uva, laranja, caqui, pêra, banana");
 		});
 
@@ -176,6 +176,15 @@ describe("Data Structure: Linked List with Class", () => {
 			expect(doublyLinkedList.size()).toBe(4);
             expect(doublyLinkedList.removeAt(3)).toBe('uva');
 		});
+
+		it("should return add in first position using insertAt when list is empty", () => {
+			doublyLinkedList.clear();
+			expect(doublyLinkedList.size()).toBe(0);
+            expect(doublyLinkedList.insertElementAt('acerola', 0)).toBeTruthy();
+			expect(doublyLinkedList.size()).toBe(1);
+			expect(doublyLinkedList.toString()).toBe('acerola');
+			expect(doublyLinkedList.removeAt(0)).toBe('acerola');
+        });
 	});
 
 });

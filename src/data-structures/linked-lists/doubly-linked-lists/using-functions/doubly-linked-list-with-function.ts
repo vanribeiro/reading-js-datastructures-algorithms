@@ -1,4 +1,4 @@
-import { Element, Node } from "../../../../types/data-structures";
+import { DoublyNode, Element, Node } from "../../../../types/data-structures";
 import { defaultEquals } from "../../../../utils/index";
 
 function DoublyLinkedListFn() {
@@ -7,17 +7,21 @@ function DoublyLinkedListFn() {
     let head: any = null;
     let tail: any = null;
 
-    function DoublyLinkedListNode (element: Element): Node {
+    function isAValidIndex(index: number): boolean {
+        return index >= 0 && index <= count;
+    }
+
+    function DllNode (element: Element): DoublyNode {
         return {
             element,
-            next: null
+            next: null,
+            prev: null
         }
     }
     
     function push(element: Element): void {
-        const node: Node = DoublyLinkedListNode(element);
-        
-        if(head === null) {
+        const node = DllNode(element);
+        if(head === null){
             head = node;
             tail = node;
         } else {
@@ -25,7 +29,7 @@ function DoublyLinkedListFn() {
             node.prev = tail;
             tail = node;
         }
-        count++
+        count++;
     }
 
     function getElementAt(index: number): Node | undefined {
@@ -40,8 +44,9 @@ function DoublyLinkedListFn() {
     }
 
     function insertElementAt(element: Element, index: number): boolean {
+
         if(isAValidIndex(index)){
-            const node: any = DoublyLinkedListNode(element);
+            const node = DllNode(element);
             let current = head;
 
             if(index === 0){
@@ -55,13 +60,16 @@ function DoublyLinkedListFn() {
                     head = node;
                 }
 
-            } else if(index === count - 1) {
+            } else if(index === count - 1){
+
                 current = tail;
                 current.next = node;
                 node.prev = current;
                 tail = node;
+
             } else {
-                const previous = getElementAt(index - 1); 
+
+                const previous = getElementAt(index - 1);
                 if(previous){
                     current = previous.next;
                     node.next = current;
@@ -69,10 +77,12 @@ function DoublyLinkedListFn() {
                     current.prev = node;
                     node.prev = previous;
                 }
+
             }
             count++;
-            return true
+            return true;
         }
+
         return false;
     }
 
@@ -142,10 +152,6 @@ function DoublyLinkedListFn() {
         }
 
         return objString;
-    }
-
-    function isAValidIndex(index: number): boolean {
-        return index >= 0 && index < count;
     }
 
     function size(): number {
