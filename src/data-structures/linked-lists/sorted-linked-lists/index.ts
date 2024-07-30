@@ -1,6 +1,6 @@
-import { Element } from "../../../../types/data-structures";
-import { defaultCompare, defaultEquals } from "../../../../utils";
-import LinkedList from "../../linked-lists/using-classes";
+import { Element } from "../../../types/data-structures";
+import { defaultCompare, defaultEquals } from "../../../utils";
+import LinkedList from "../linked-lists/using-classes";
 
 class SortedLinkedList extends LinkedList {
     compares: Function;

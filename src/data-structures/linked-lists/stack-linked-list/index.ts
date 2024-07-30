@@ -1,6 +1,6 @@
-import IStackLinkedList from "../../../../interfaces/IStackLinkedList";
-import { Element } from "../../../../types/data-structures";
-import DoublyLinkedList from "../../doubly-linked-lists/using-classes";
+import IStackLinkedList from "../../../interfaces/IStackLinkedList";
+import { Element } from "../../../types/data-structures";
+import DoublyLinkedList from "../doubly-linked-lists/using-classes";
 
 class StackLinkedList implements IStackLinkedList {
     items: DoublyLinkedList;

@@ -1,7 +1,7 @@
-import Node from "../../../../models/Node";
-import { Element } from "../../../../types/data-structures";
-import { defaultEquals } from "../../../../utils";
-import LinkedList from "../../linked-lists/using-classes";
+import Node from "../../../models/Node";
+import { Element } from "../../../types/data-structures";
+import { defaultEquals } from "../../../utils";
+import LinkedList from "../linked-lists/using-classes";
 
 class CircularLinkedList extends LinkedList{
     constructor(equals = defaultEquals) {

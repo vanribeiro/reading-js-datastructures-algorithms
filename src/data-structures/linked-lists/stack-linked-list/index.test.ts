@@ -1,4 +1,4 @@
-import StackLinkedList from ".";
+import StackLinkedList from "./";
 
 const stackLinkedList = new StackLinkedList();
 
