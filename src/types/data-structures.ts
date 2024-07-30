@@ -1,4 +1,5 @@
 type Element = string | number | object;
+type SetElement = string | number | symbol;
 
 type Node = {
     element: Element
@@ -15,6 +16,7 @@ type IndexNumber = {
 
 export {
     Element,
+    SetElement,
     Node,
     IndexNumber,
     DoublyNode,
