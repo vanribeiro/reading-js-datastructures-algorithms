@@ -2,7 +2,7 @@ import { Element, Node } from "../../../../types/data-structures";
 import { defaultEquals } from "../../../../utils/index";
 import ILinkedList from "../../../../interfaces/ILinkedList";
 
-function LinkedListFn(): ILinkedList {
+function LinkedListFn(equals: Function = defaultEquals): ILinkedList {
 
     let count: number = 0;
     let head: any = null;
@@ -90,7 +90,7 @@ function LinkedListFn(): ILinkedList {
     function indexOf(element: Element): number {
         let current: any = head;
         for (let i = 0; i < count && current.element != null; i++) {
-            if(defaultEquals(element, current.element)) return i;
+            if(equals(element, current.element)) return i;
             current = current.next;
         }
         return -1;
