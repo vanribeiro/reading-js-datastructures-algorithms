@@ -4,5 +4,6 @@ Aos poucos estou o lendo o livro ["Estruturas de Dados e Algoritmos com JavaScri
 
 1. [Data Structures](/src/data-structures/):
     1. [Linked Lists](/src/data-structures/linked-lists/)
-    2. [Queues](/src/data-structures/queues/) 
+    2. [Queues](/src/data-structures/queues/)
+    3. [Set](/src/data-structures/set/)
     3. [Stack](/src/data-structures/stacks/)
