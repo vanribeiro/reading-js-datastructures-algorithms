@@ -1,4 +1,4 @@
-import { Element } from "../../../types/data-structures";
+import { Element } from "../../../../types/data-structures";
 
 function setOperation () {
 
@@ -28,13 +28,29 @@ function setOperation () {
         return intersectionSet;
     }
 
-    // Todo
     const difference = (setA: Set<Element>, setB: Set<Element>): Set<Element> => {
-        return new Set();
+        const differenceSet: Set<Element> = new Set();
+        setA.forEach((value: Element) => {
+            if(!setB.has(value)){
+                differenceSet.add(value);
+            }
+        });
+
+        return differenceSet;
     }
 
-    const isSubsetOf = (setA: Set<Element>, setB: Set<Element>): Set<Element> => {
-        return new Set();
+    const isSubsetOf = (setA: Set<Element>, setB: Set<Element>): boolean => {
+        if(setA.size > setB.size){
+            return false;
+        }
+
+        for (const iterator of setA) {
+            if(!setB.has(iterator)){
+                return false;
+            }
+        }
+
+        return true;
     }
 
     return {

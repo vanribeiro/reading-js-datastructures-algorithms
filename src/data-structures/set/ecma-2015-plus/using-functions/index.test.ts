@@ -1,7 +1,5 @@
-// import Set from ".";
-
 import setOperation from ".";
-import { Element } from "../../../types/data-structures";
+import { Element } from "../../../../types/data-structures";
 
 describe('ES2015 - Native Set: Operation between sets', () => {
 
@@ -39,27 +37,27 @@ describe('ES2015 - Native Set: Operation between sets', () => {
         expect(intersectionSets).toEqual([2, 3]);
     });
 
-    it.skip('should perform difference operation on two Sets: A - B', () => {
-        const differenceSets = difference(setA, setB);
-        expect(differenceSets.values()).toEqual([1]);
+    it('should perform difference operation on two Sets: A - B', () => {
+        const differenceSets = allSetValues(difference(setA, setB));
+        expect(differenceSets).toEqual([1]);
     });
 
-    it.skip('should perform difference operation on two Sets: B - A', () => {
-        const differenceSets = difference(setA, setB);
-        expect(differenceSets.values()).toEqual([4, 5, 6]);
+    it('should perform difference operation on two Sets: B - A', () => {
+        const differenceSets = allSetValues(difference(setB, setA));
+        expect(differenceSets).toEqual([4, 5, 6]);
     });
 
-    it.skip('should perform isSubsetOf operation on a Set: C is subset of A', () => {
+    it('should perform isSubsetOf operation on a Set: C is subset of A', () => {
         const subset = isSubsetOf(setC, setA);
         expect(subset).toBeTruthy();
     });
 
-    it.skip('should perform isSubsetOf operation on a Set: A is not subset of B', () => {
+    it('should perform isSubsetOf operation on a Set: A is not subset of B', () => {
         const subset = isSubsetOf(setA, setB);
         expect(subset).toBeFalsy();
     });
 
-    it.skip('should perform isSubsetOf operation on a Set: A is not subset of C', () => {
+    it('should perform isSubsetOf operation on a Set: A is not subset of C', () => {
         const subset = isSubsetOf(setA, setC);
         expect(subset).toBeFalsy();
     });
