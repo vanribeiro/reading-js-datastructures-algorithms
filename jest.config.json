@@ -1,12 +1,14 @@
 {
     "bail": 1,
     "verbose": true,
+    "modulePathIgnorePatterns": [
+        "<rootDir>/src/data-structures/set/ecma-2025-plus",
+        "<rootDir>/src/interfaces",
+        "<rootDir>/src/types",
+        "<rootDir>/node_modules"
+    ],
     "coverageDirectory" : "coverage",
     "collectCoverageFrom": [
-        "<rootDir>/src/**/*.{ts,js}",
-        "!<rootDir>/src/interfaces/**/*.{ts,js}",
-        "!<rootDir>/src/types/**/*.{ts,js}",
-        "!src/data-structures/set/ecma-2025-plus/**/*.test.{ts}",
-        "!**/node_modules/**"
+        "<rootDir>/src/**/*.{ts,js}"
     ]
 }
