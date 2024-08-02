@@ -1,11 +1,13 @@
+import { Element } from "../types/data-structures";
+
 class Node {
 
-    element: any;
-    next: any;
+    element: Element;
+    next: Element | null;
     
     constructor(
-        element: any,  
-        next: any = null  
+        element: Element,  
+        next: Element | null = null  
     ) {
         this.element = element;
         this.next = next;

@@ -1,10 +1,8 @@
-import { Element } from "../types/data-structures";
-
-function defaultEquals(a: unknown, b: unknown): boolean {
+function defaultEquals<T>(a: T, b: T): boolean {
     return a === b;
 }
 
-function defaultCompare(a: Element, b: Element): number {
+function defaultCompare<T>(a: T, b: T): number {
     const Compare = {
         LESS_THAN: -1,
         BIGGER_THAN: 1,

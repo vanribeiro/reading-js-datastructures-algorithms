@@ -1,12 +1,13 @@
+import { Element } from "../types/data-structures";
 import Node from "./Node";
 
 class DoublyNode extends Node{
-    prev: any;
+    prev: Element | null;
 
     constructor(
-        element: any, 
-        next: any = null, 
-        prev: any = null 
+        element: Element, 
+        next: Element | null = null, 
+        prev: Element | null = null 
     ) {
         super(element, next);
         this.prev = prev;
