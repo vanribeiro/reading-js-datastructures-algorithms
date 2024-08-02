@@ -1,7 +1,7 @@
 import { Element } from "../types/data-structures";
-import IBase from "./ICommomDataStructure";
+import ICommomDataStructure from "./ICommomDataStructure";
 
-interface IStack extends IBase {
+interface IStack extends ICommomDataStructure {
     push(item: Element): void;
     peek(): Element | undefined;
     pop(): Element | undefined;
