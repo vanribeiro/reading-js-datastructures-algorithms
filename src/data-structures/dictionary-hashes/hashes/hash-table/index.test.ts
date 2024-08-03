@@ -1,5 +1,4 @@
 import HashTable from ".";
-import { Key } from "../../../../types/dictionary";
 import ValuePair from "../../dictionary/ValuePair";
 
 const hashTable = new HashTable();

@@ -1,7 +1,6 @@
 import IHash from "../../../../interfaces/IHash";
 import { IndexString, Key, Value } from "../../../../types/dictionary";
 import { defaultToString } from "../../../../utils";
-import Dictionary from "../../dictionary";
 import ValuePair from "../../dictionary/ValuePair";
 
 class HashTable implements IHash{
