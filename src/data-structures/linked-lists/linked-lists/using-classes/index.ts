@@ -21,7 +21,7 @@ class LinkedList implements ILinkedList {
 
     push(element: Element): void {
         const node: Node = new Node(element);
-        let current: Node;
+        let current: any;
         if(this.head === null) {
             this.head = node;
         } else {
