@@ -1,4 +1,5 @@
-import { Element, Node } from "./../types/data-structures";
+import Node from "../models/Node";
+import { Element } from "./../types/data-structures";
 import ICommomDataStructure from "./ICommomDataStructure";
 
 interface ILinkedList extends ICommomDataStructure {
