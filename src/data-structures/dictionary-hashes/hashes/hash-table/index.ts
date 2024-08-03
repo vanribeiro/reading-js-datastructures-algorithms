@@ -1,8 +1,8 @@
-import IHash from "../../../interfaces/IHash";
-import { IndexString, Key, Value } from "../../../types/dictionary";
-import { defaultToString } from "../../../utils";
-import Dictionary from "../dictionary";
-import ValuePair from "../dictionary/ValuePair";
+import IHash from "../../../../interfaces/IHash";
+import { IndexString, Key, Value } from "../../../../types/dictionary";
+import { defaultToString } from "../../../../utils";
+import Dictionary from "../../dictionary";
+import ValuePair from "../../dictionary/ValuePair";
 
 class HashTable implements IHash{
     toStriFn: Function;
@@ -68,15 +68,13 @@ class HashTable implements IHash{
     }
 
     toString(): string {
-        const valuePairs = this.keyValues();
-        
+        const keys = Object.keys(this.table);
         if(this.isEmpty()) return '';
         
-        if(this.size() === 1) return `${valuePairs[0].toString()}`;
-        let objString = `${valuePairs[0].toString()}`;
+        let objString = `{${keys[0]} => ${this.table[keys[0]].toString()}}`;
         
-        for (let i = 1; i < valuePairs.length; i++) {
-            objString = `${objString}, ${valuePairs[i].toString()}`;
+        for (let i = 1; i < keys.length; i++) {
+            objString = `${objString}, ${`{${keys[i]} => ${this.table[keys[i]].toString()}}`}`;
         }
 
         return objString;

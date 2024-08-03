@@ -1,6 +1,6 @@
 import HashTable from ".";
-import { Key } from "../../../types/dictionary";
-import ValuePair from "../dictionary/ValuePair";
+import { Key } from "../../../../types/dictionary";
+import ValuePair from "../../dictionary/ValuePair";
 
 const hashTable = new HashTable();
 
@@ -63,7 +63,7 @@ describe('Data Structure: HashTable', () => {
         });
 
         it('should perform toString() method', () => {
-            const str = '[#dogName]: Snoopy';
+            const str = '{33 => [#dogName]: Snoopy}';
             const result = hashTable.toString();
             expect(result).toBe(str);
         });
@@ -76,7 +76,7 @@ describe('Data Structure: HashTable', () => {
         });
 
         it('should perform toString() method', () => {
-            const str = '[#phone1]: 9999999999, [#phone3]: 7777777777';
+            const str = '{32 => [#phone1]: 9999999999}, {34 => [#phone3]: 7777777777}';
             const result = hashTable.toString();
             expect(result).toBe(str);
         });
