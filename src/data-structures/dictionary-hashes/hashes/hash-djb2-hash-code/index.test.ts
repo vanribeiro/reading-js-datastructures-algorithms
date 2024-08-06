@@ -9,12 +9,12 @@ describe('Data Structure: HashTableLinearProbing', () => {
         
         it('should return the same input value', () => {
             const result = hashTableLinearProbing.hashCode(150);
-            expect(result).toBe(150);
+            expect(result).toBe(818);
         });
 
         it('should return 9 to word Yes', () => {
             const result = hashTableLinearProbing.hashCode('Yes');
-            expect(result).toBe(9);
+            expect(result).toBe(444);
         });
     });
 
@@ -62,7 +62,7 @@ describe('Data Structure: HashTableLinearProbing', () => {
         });
 
         it('should perform toString() method', () => {
-            const str = '{33 => [#dogName]: Snoopy}';
+            const str = '{647 => [#dogName]: Snoopy}';
             const result = hashTableLinearProbing.toString();
             expect(result).toBe(str);
         });
@@ -75,7 +75,7 @@ describe('Data Structure: HashTableLinearProbing', () => {
         });
 
         it('should perform toString() method', () => {
-            const str = '{32 => [#phone1]: 9999999999}\n{33 => [#dogName]: Snoopy}\n{34 => [#phone3]: 7777777777}';
+            const str = '{647 => [#dogName]: Snoopy}\n{789 => [#phone1]: 9999999999}\n{791 => [#phone3]: 7777777777}';
             const result = hashTableLinearProbing.toString();
             expect(result).toBe(str);
         });
@@ -114,170 +114,163 @@ describe('Data Structure: HashTableLinearProbing', () => {
 
         it('should return true when Ygritte is added as [key-value]', () => {
             expect(hashTableLinearProbing.put('Ygritte', 'Ygritte')).toBeTruthy();
-        });
 
-        it('should add Jonathan as [key-value] and the hash value is 5', () => {
+            const position = hashTableLinearProbing.getPosition('Ygritte');
+            expect(position).toBe(807);
+        });
+        
+        it('should add Jonathan as [key-value] and the hash value is 288', () => {
             expect(hashTableLinearProbing.put('Jonathan', 'Jonathan')).toBeTruthy();
 
-            const hash = hashTableLinearProbing.keyIndexes();
-            expect(hash[1]).toBe('5');
+            const position = hashTableLinearProbing.getPosition('Jonathan');
+            expect(position).toBe(288);
         });
 
-        it('should add Jamie as [key-value] and the hash value is 6', () => {
+        it('should add Jamie as [key-value] and the hash value is 962', () => {
             expect(hashTableLinearProbing.put('Jamie', 'Jamie')).toBeTruthy();
 
-            const hash = hashTableLinearProbing.keyIndexes();
-            expect(hash[2]).not.toBe('5');
-            expect(hash[2]).toBe('6');
+            const position = hashTableLinearProbing.getPosition('Jamie');
+            expect(position).toBe(962);
         });
 
-        it('should add Jack as [key-value] and the hash value is 7', () => {
+        it('should add Jack as [key-value] and the hash value is 619', () => {
             expect(hashTableLinearProbing.put('Jack', 'Jack')).toBeTruthy();
 
-            const hash = hashTableLinearProbing.keyIndexes();
-            expect(hash[3]).toBe('7');
+            const position = hashTableLinearProbing.getPosition('Jack');
+            expect(position).toBe(619);
         });
 
-        it('should add Jasmine as [key-value] and the hash value is 8', () => {
+        it('should add Jasmine as [key-value] and the hash value is 275', () => {
             expect(hashTableLinearProbing.put('Jasmine', 'Jasmine')).toBeTruthy();
 
-            const hash = hashTableLinearProbing.keyIndexes();
-            expect(hash[4]).toBe('8');
+            const position = hashTableLinearProbing.getPosition('Jasmine');
+            expect(position).toBe(275);
         });
 
-        it('should add Jake as [key-value] and the hash value is 9', () => {
+        it('should add Jake as [key-value] and the hash value is 877', () => {
             expect(hashTableLinearProbing.put('Jake', 'Jake')).toBeTruthy();
 
-            const hash = hashTableLinearProbing.keyIndexes();
-            expect(hash[5]).toBe('9');
+            const position = hashTableLinearProbing.getPosition('Jake');
+            expect(position).toBe(877);
         });
 
-        it('should add Nathan as [key-value] and the hash value is 10', () => {
+        it('should add Nathan as [key-value] and the hash value is 223', () => {
             expect(hashTableLinearProbing.put('Nathan', 'Nathan')).toBeTruthy();
 
-            const hash = hashTableLinearProbing.keyIndexes();
-            expect(hash[6]).toBe('10');
+            const position = hashTableLinearProbing.getPosition('Nathan');
+            expect(position).toBe(223);
         });
 
-        it('should add Athelstan as [key-value] and the hash value is 11', () => {
+        it('should add Athelstan as [key-value] and the hash value is 925', () => {
             expect(hashTableLinearProbing.put('Athelstan', 'Athelstan')).toBeTruthy();
 
-            const hash = hashTableLinearProbing.keyIndexes();
-            expect(hash[7]).not.toBe('7');
-            expect(hash[7]).not.toBe('8');
-            expect(hash[7]).toBe('11');
+            const position = hashTableLinearProbing.getPosition('Athelstan');
+            expect(position).toBe(925);
         });
 
-        it('should add Sue as [key-value] and the hash value is 12', () => {
+        it('should add Sue as [key-value] and the hash value is 502', () => {
             expect(hashTableLinearProbing.put('Sue', 'Sue')).toBeTruthy();
 
-            const hash = hashTableLinearProbing.keyIndexes();
-            expect(hash[8]).not.toBe('6');
-            expect(hash[8]).not.toBe('7');
-            expect(hash[8]).not.toBe('8');
-            expect(hash[8]).not.toBe('9');
-            expect(hash[8]).not.toBe('10');
-            expect(hash[8]).not.toBe('11');
-            expect(hash[8]).toBe('12');
+            const position = hashTableLinearProbing.getPosition('Sue');
+            expect(position).toBe(502);
         });
 
         it('should add Aethelwulf as [key-value] and the hash value is 13', () => {
             expect(hashTableLinearProbing.put('Aethelwulf', 'Aethelwulf')).toBeTruthy();
 
-            const hash = hashTableLinearProbing.keyIndexes();
-            expect(hash[9]).not.toBe('6');
-            expect(hash[9]).not.toBe('7');
-            expect(hash[9]).not.toBe('8');
-            expect(hash[9]).not.toBe('9');
-            expect(hash[9]).not.toBe('10');
-            expect(hash[9]).not.toBe('11');
-            expect(hash[9]).not.toBe('12');
-            expect(hash[9]).toBe('13');
+            const position = hashTableLinearProbing.getPosition('Aethelwulf');
+            expect(position).toBe(149);
         });
 
         it('should add Sargeras as [key-value] and the hash value is 14', () => {
             expect(hashTableLinearProbing.put('Sargeras', 'Sargeras')).toBeTruthy();
 
-            const hash = hashTableLinearProbing.keyIndexes();
-            expect(hash[10]).not.toBe('10');
-            expect(hash[10]).not.toBe('11');
-            expect(hash[10]).not.toBe('12');
-            expect(hash[10]).not.toBe('13');
-            expect(hash[10]).toBe('14');
+            const position = hashTableLinearProbing.getPosition('Sargeras');
+            expect(position).toBe(711);
         });
 
         it('should remove Jonathan and return undefined', () => {
             const result = hashTableLinearProbing.remove('Jonathan');
             const value = hashTableLinearProbing.get('Jonathan');
-            const position = hashTableLinearProbing.getPosition('Jonathan');
+            const hash = hashTableLinearProbing.getPosition('Jonathan');
 
             expect(result).toBeTruthy();
             expect(value).toBeUndefined();
-            expect(position).toBeUndefined();
+            expect(hash).toBeUndefined();
         });
 
-        it('should get Jamie position equals 5', () => {
+        it('should get Jamie position equals 962', () => {
             const value = hashTableLinearProbing.get('Jamie');
-            const position = hashTableLinearProbing.getPosition('Jamie');
+            const hash = hashTableLinearProbing.getPosition('Jamie');
 
             expect(value).toBe('Jamie');
-            expect(position).toBe(5);
+            expect(hash).toBe(962);
         });
 
-        it('should get Jack position equals 7', () => {
+        it('should get Jack position equals 619', () => {
             const value = hashTableLinearProbing.get('Jack');
-            const position = hashTableLinearProbing.getPosition('Jack');
+            const hash = hashTableLinearProbing.getPosition('Jack');
 
             expect(value).toBe('Jack');
-            expect(position).toBe(7);
+            expect(hash).toBe(619);
         });
 
-        it('should get Jasmine position equals 8', () => {
+        it('should get Jasmine position equals 275', () => {
             const value = hashTableLinearProbing.get('Jasmine');
-            const position = hashTableLinearProbing.getPosition('Jasmine');
+            const hash = hashTableLinearProbing.getPosition('Jasmine');
 
             expect(value).toBe('Jasmine');
-            expect(position).toBe(8);
+            expect(hash).toBe(275);
         });
 
         it('should get Jake position equals 9', () => {
             const value = hashTableLinearProbing.get('Jake');
-            const position = hashTableLinearProbing.getPosition('Jake');
+            const hash = hashTableLinearProbing.getPosition('Jake');
 
             expect(value).toBe('Jake');
-            expect(position).toBe(9);
+            expect(hash).toBe(877);
         });
 
-        it('should get Nathan position equals 10', () => {
-            const position = hashTableLinearProbing.getPosition('Nathan');
-            expect(position).toBe(10);
+        it('should get Nathan position equals 877', () => {
+            const value = hashTableLinearProbing.get('Nathan');
+            const hash = hashTableLinearProbing.getPosition('Nathan');
+
+            expect(value).toBe('Nathan');
+            expect(hash).toBe(223);
         });
 
-        it('should get Athelstan position equals 7', () => {
-            const position = hashTableLinearProbing.getPosition('Athelstan');
-            expect(position).toBe(7);
-        });
-        
-        //colisões
+        it('should get Athelstan position equals 223', () => {
+            const value = hashTableLinearProbing.get('Athelstan');
+            const hash = hashTableLinearProbing.getPosition('Athelstan');
 
-        it('should get Sue position equals 5', () => {
-            const position = hashTableLinearProbing.getPosition('Sue');
-            expect(position).toBe(5);
+            expect(value).toBe('Athelstan');
+            expect(hash).toBe(925);
         });
 
-        it('should get Aethelwulf position equals 5', () => {
-            const position = hashTableLinearProbing.getPosition('Aethelwulf');
-            expect(position).toBe(5);
+        it('should get Sue position equals 6', () => {
+            const value = hashTableLinearProbing.get('Sue');
+            const hash = hashTableLinearProbing.getPosition('Sue');
+
+            expect(value).toBe('Sue');
+            expect(hash).toBe(502);
         });
 
-        it('should get Sargeras position equals 10', () => {
-            const position = hashTableLinearProbing.getPosition('Sargeras');
-            expect(position).toBe(10);
+        it('should get Aethelwulf position equals 13', () => {
+            const value = hashTableLinearProbing.get('Aethelwulf');
+            const hash = hashTableLinearProbing.getPosition('Aethelwulf');
+
+            expect(value).toBe('Aethelwulf');
+            expect(hash).toBe(149);
         });
 
-        
+        it('should get Sargeras position equals 13', () => {
+            const value = hashTableLinearProbing.get('Sargeras');
+            const hash = hashTableLinearProbing.getPosition('Sargeras');
+
+            expect(value).toBe('Sargeras');
+            expect(hash).toBe(711);
+        });        
 
     });
-
     
 });
