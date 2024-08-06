@@ -30,23 +30,33 @@ class HashTableSeparateChaining implements IHash{
     }
 
     put(key: Key, value: Value): boolean {
-        if(key !== null && value !== null){
+        if(key && value){
             const position = this.hashCode(key);
-            if(this.table[position] === null){
+            if(!this.table[position]){
                 this.table[position] = new LinkedList();
             }
-            this.table[position].push(new ValuePair(key, value));
+            
+            this.table[position]?.push(new ValuePair(key, value));
             return true;
         }
         return false;
     }
 
     remove(key: Key): boolean {
-        const hash = this.hashCode(key);
-        const valuePair = this.table[hash];
-        if(valuePair){
-            delete this.table[hash];
-            return true;
+        const position = this.hashCode(key);
+        const linkedList = this.table[position];
+        if(linkedList && !linkedList.isEmpty()){
+            let current: any = linkedList.getHead();
+            while(current !== null){
+                if(current?.element.key === key){
+                    linkedList.remove(current.element);
+                    if(linkedList.isEmpty()){
+                        delete this.table[position];
+                    }
+                    return true;
+                }
+                current = current?.next;
+            }            
         }
         return false;
     }
@@ -54,7 +64,7 @@ class HashTableSeparateChaining implements IHash{
     get(key: Key): Element | undefined {
         const position: number = this.hashCode(key);
         const linkedList: LinkedList = this.table[position];
-        if(linkedList !== null && !linkedList.isEmpty()){
+        if(linkedList && !linkedList.isEmpty()){
             let current: any = linkedList.getHead();
             while(current !== null){
                 if((current?.element.key) === key) {

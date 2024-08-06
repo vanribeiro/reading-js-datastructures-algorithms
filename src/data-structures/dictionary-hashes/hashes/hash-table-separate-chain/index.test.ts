@@ -58,6 +58,7 @@ describe('Data Structure: HashTable', () => {
         
         it('should perform get(key) method', () => {
             const result = hashTableSeparateChaining.get('dogName');
+            console.log(result)
             expect(result).toBe('Snoopy');
         });
 
@@ -75,7 +76,7 @@ describe('Data Structure: HashTable', () => {
         });
 
         it('should perform toString() method', () => {
-            const str = '{32 => [#phone1]: 9999999999}, {34 => [#phone3]: 7777777777}';
+            const str = '{32 => [#phone1]: 9999999999}, {33 => [#dogName]: Snoopy}, {34 => [#phone3]: 7777777777}';
             const result = hashTableSeparateChaining.toString();
             expect(result).toBe(str);
         });
@@ -96,7 +97,7 @@ describe('Data Structure: HashTable', () => {
         
         it('should perform size() method', () => {
             const result = hashTableSeparateChaining.keyValues();
-            expect(result).toHaveLength(2);
+            expect(result).toHaveLength(3);
         });
         
         it('should perform clear() method', () => {
