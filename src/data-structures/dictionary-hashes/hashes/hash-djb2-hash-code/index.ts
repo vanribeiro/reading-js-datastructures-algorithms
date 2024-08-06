@@ -2,9 +2,11 @@ import { IndexString, Key, Value } from "../../../../types/dictionary";
 import { defaultToString } from "../../../../utils";
 import ValuePair from "../../dictionary/ValuePair";
 
-class HashTableLinearProbing{
+class HashTableLinearProbingDjb2 {
+    
     toStriFn: Function;
-    table: IndexString
+    table: IndexString;
+
     constructor(toStrFn = defaultToString){
         this.toStriFn = toStrFn;
         this.table = {};
@@ -50,17 +52,6 @@ class HashTableLinearProbing{
                 return true;
             }
 
-            let index = position + 1;
-
-            while(this.table[index] != null && this.table[index].key !== key){
-                index++;
-            }
-
-            if(this.table[index] != null && this.table[index].key === key) {
-                delete this.table[index];
-                this.veryRemoveSideEffects(key, index);
-                return true
-            }
         }
         return false;
     }
@@ -85,16 +76,6 @@ class HashTableLinearProbing{
             if(this.table[position].key === key){
                 return this.table[position].value;
             }
-
-            let index = position + 1;
-
-            while(this.table[index] != null && this.table[index].key !== key){
-                index++;
-            }
-
-            if(this.table[index] != null && this.table[index].key === key) {
-                return this.table[position].value;
-            }
         }
         return undefined;
     }
@@ -103,16 +84,6 @@ class HashTableLinearProbing{
         const position: number = this.hashCode(key);
         if(this.table[position] != null){
             if(this.table[position].key === key){
-                return position;
-            }
-
-            let index = position + 1;
-
-            while(this.table[index] != null && this.table[index].key !== key){
-                index++;
-            }
-
-            if(this.table[index] != null && this.table[index].key === key) {
                 return position;
             }
         }
@@ -135,10 +106,6 @@ class HashTableLinearProbing{
         return Object.values(this.table);
     }
 
-    keyIndexes(): Array<Key> {
-        return Object.keys(this.table);
-    }
-
     toString(): string {
         const keys = Object.keys(this.table);
         if(this.isEmpty()) return '';
@@ -154,4 +121,4 @@ class HashTableLinearProbing{
     
 }
 
-export default HashTableLinearProbing;
+export default HashTableLinearProbingDjb2;
