@@ -1,14 +1,12 @@
-import { Key, Value } from "../types/data-structures";
-
-interface IBinarySearchTree {
-    insert(key: Key): boolean;
-    search(key: Key): Value;
-    inOrderTraverse(): void;
-    preOrderTraverse(): void;
-    postOrderTraverse(): void;
+interface IBinarySearchTree<K> {
+    insert(key: K): void;
+    search(key: K): boolean;
+    inOrderTraverse(callback: Function): void;
+    preOrderTraverse(callback: Function): void;
+    postOrderTraverse(callback: Function): void;
     min(): number;
     max(): number;
-    remove(key: Key): boolean;
+    remove(key: K): boolean;
 }
 
 export default IBinarySearchTree;
