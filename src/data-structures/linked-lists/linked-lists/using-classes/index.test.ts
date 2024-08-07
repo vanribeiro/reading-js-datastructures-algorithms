@@ -1,5 +1,5 @@
 import LinkedList from ".";
-import Node from "../../../../models/Node";
+import Node from "../../../../models/linked-lists/Node";
 
 const linkedList = new LinkedList();
 

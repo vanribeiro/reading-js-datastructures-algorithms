@@ -1,5 +1,5 @@
 import { defaultEquals } from "../../../../utils";
-import Node from "../../../../models/Node";
+import Node from "../../../../models/linked-lists/Node";
 import ILinkedList from "../../../../interfaces/ILinkedList";
 import { Element } from "../../../../types/data-structures";
 

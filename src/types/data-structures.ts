@@ -14,11 +14,15 @@ type IndexNumber = {
     [index: number]: Element;
 };
 
+type Key = string | number;
+type Value = Element;
+
 export {
     Element,
     SetElement,
     Node,
     IndexNumber,
     DoublyNode,
-
+    Key,
+    Value
 }
