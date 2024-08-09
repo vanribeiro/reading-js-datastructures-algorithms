@@ -1,6 +1,6 @@
-import IBinarySearchTree from "../../../interfaces/IBinarySearchTree";
-import Node from "../../../models/trees/Node";
-import { Compare, defaultCompare } from "../../../utils";
+import IBinarySearchTree from "../../../../interfaces/IBinarySearchTree";
+import Node from "../../../../models/trees/Node";
+import { Compare, defaultCompare } from "../../../../utils";
 
 class BinarySearchTree<K> implements IBinarySearchTree<K>{
 
