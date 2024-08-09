@@ -29,6 +29,17 @@ describe('Data Structure: Binary Search Tree', () => {
             const root = tree.getRoot()?.right;
             expect(root).toBeUndefined();
         });
+
+        it('should remove the root', () => {
+            const result = tree.remove(null as any);
+            expect(result).toBeUndefined();
+        });
+
+        it('should remove the left and right', () => {
+            const result = tree.remove(null as any);
+            expect(result).toBeUndefined();
+        });
+
     });
 
     describe('when it is populated', () => {
@@ -71,6 +82,65 @@ describe('Data Structure: Binary Search Tree', () => {
             clearArray(orderValues)
             tree.postOrderTraverse(orderCallback);
             expect(orderValues).toEqual([3, 6, 5, 8, 10, 9, 7, 12, 14, 13, 18, 25, 20, 15, 11]);
+        });
+
+        it('should return the minimum value in tree', () => {
+            const min = tree.min();
+            expect(min?.key).toBe(3);
+        });
+
+        it('should return the maximum value in tree', () => {
+            const max = tree.max();
+            expect(max?.key).toBe(25);
+        });
+
+        it('should return true if 25 is found', () => {
+            const result = tree.search(25);
+            expect(result).toBeTruthy();
+        });
+
+        it('should return false if 100 is NOT found', () => {
+            const result = tree.search(100);
+            expect(result).toBeFalsy();
+        });
+
+        it('should remove a leaf: key[6]', () => {
+            tree.remove(6);
+            const result = tree.search(6);
+            expect(result).toBeFalsy();
+        });
+
+        it('should remove the node key[5] with left child or right child', () => {
+            tree.remove(5);
+            expect(tree.search(5)).toBeFalsy();
+
+            expect(tree.search(3)).toBeTruthy();
+            expect(tree.search(7)).toBeTruthy();
+        });
+
+        it('should remove the node key[15] with left child and right child', () => {
+            tree.remove(15);
+            expect(tree.search(15)).toBeFalsy();
+
+            expect(tree.search(18)).toBeTruthy();
+            expect(tree.search(20)).toBeTruthy();
+            expect(tree.search(25)).toBeTruthy();
+        });
+
+        it('should remove the node key[7] with left child and right child', () => {
+            tree.remove(7);
+            expect(tree.search(7)).toBeFalsy();
+
+            expect(tree.search(3)).toBeTruthy();
+            expect(tree.search(9)).toBeTruthy();
+        });
+
+        it('should remove the node leaf: key[8] with no children', () => {
+            tree.remove(8);
+            expect(tree.search(8)).toBeFalsy();
+
+            expect(tree.search(9)).toBeTruthy();
+            expect(tree.search(10)).toBeTruthy();
         });
 
     });
