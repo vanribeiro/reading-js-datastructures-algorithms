@@ -1,5 +1,5 @@
 class Node<K> {
-    key: K;
+    key: K | null | undefined;
     left: Node<K> | null;
     right: Node<K> | null;
 
