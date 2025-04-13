@@ -1,6 +1,6 @@
-import Node from "../../../models/trees/Node";
-import { defaultCompare } from "../../../utils";
-import BinarySearchTree from "../binary-search-tree/using-classes";
+import Node from "../../../../models/trees/Node";
+import { defaultCompare } from "../../../../utils";
+import BinarySearchTree from "../../binary-search-tree/using-classes";
 import BalanceFactor from "./balance-factor";
 
 class AVLTree<K> extends BinarySearchTree<K> {
@@ -21,7 +21,7 @@ class AVLTree<K> extends BinarySearchTree<K> {
         ) + 1;
     }
 
-    getBanlanceFactor(node: Node<K> | null): number {
+    getBalanceFactor(node: Node<K> | null): number {
         const heightDifference = this.getNodeHeight(node?.left) - this.getNodeHeight(node?.right);
         switch (heightDifference) {
             case -2:
