@@ -9,3 +9,11 @@ Aos poucos estou o lendo o livro ["Estruturas de Dados e Algoritmos com JavaScri
     - [Queues](/src/data-structures/queues/)
     - [Set](/src/data-structures/set/)
     - [Stack](/src/data-structures/stacks/)
+
+## Executando o code
+
+In the root folder:
+
+```bash
+npm run dev path/file-name.ts
+```
