@@ -1,5 +1,5 @@
 import Node from "../../../../models/trees/Node";
-import { defaultCompare } from "../../../../utils";
+import { defaultCompare } from "../../../../utils/default-functions";
 import BinarySearchTree from "../../binary-search-tree/using-classes";
 import BalanceFactor from "./balance-factor";
 

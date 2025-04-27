@@ -1,7 +1,7 @@
 import IHash from "../../../../interfaces/IHash";
 import { Element } from "../../../../types/data-structures";
 import { Key, Value } from "../../../../types/dictionary";
-import { defaultToString } from "../../../../utils";
+import { defaultToString } from "../../../../utils/default-functions";
 import LinkedList from "../../../linked-lists/linked-lists/using-classes";
 import ValuePair from "../../dictionary/ValuePair";
 

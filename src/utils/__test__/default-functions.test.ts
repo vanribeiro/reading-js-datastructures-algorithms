@@ -1,4 +1,4 @@
-import { defaultCompare, defaultEquals, defaultToString } from '.';
+import { defaultCompare, defaultEquals, defaultToString } from '../default-functions';
 
 describe('defaultToString', () => {
     it('should return "NULL" for null input', () => {

@@ -1,6 +1,6 @@
 import IDictionary from "../../../interfaces/IDictionary";
 import { IndexString, Key, Value } from "../../../types/dictionary";
-import { defaultToString } from "../../../utils";
+import { defaultToString } from "../../../utils/default-functions";
 import ValuePair from "./ValuePair";
 
 class Dictionary implements IDictionary{

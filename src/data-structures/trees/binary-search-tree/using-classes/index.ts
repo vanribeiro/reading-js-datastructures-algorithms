@@ -1,12 +1,20 @@
 import IBinarySearchTree from "../../../../interfaces/IBinarySearchTree";
 import Node from "../../../../models/trees/Node";
-import { Compare, defaultCompare } from "../../../../utils";
-import { printNode } from "../utils/utils";
+import { Compare, defaultCompare } from "../../../../utils/default-functions";
+
+const { 
+    LESS_THAN_ZERO, 
+    BIGGER_THAN_ONE 
+} = Compare;
 
 class BinarySearchTree<K> implements IBinarySearchTree<K>{
 
+    public static MAX_VALUE: unknown | null | undefined;
+    public static MIN_VALUE: unknown | null | undefined;
+
     compareFn: Function;
     root: Node<K> | null;
+
 
     constructor(compareFn = defaultCompare){
         this.compareFn = compareFn;
@@ -22,7 +30,7 @@ class BinarySearchTree<K> implements IBinarySearchTree<K>{
     }
 
     private insertNode (node: Node<K>, key: K){
-        if(this.compareFn(key, node.key) === Compare.LESS_THAN) {
+        if(this.compareFn(key, node.key) === LESS_THAN_ZERO) {
             if(node.left === null) {
                 node.left = new Node(key);
             } else {
@@ -45,9 +53,9 @@ class BinarySearchTree<K> implements IBinarySearchTree<K>{
 
         if(node === null) return false;
 
-        if(this.compareFn(key, node.key) === Compare.LESS_THAN) {
+        if(this.compareFn(key, node.key) === LESS_THAN_ZERO) {
             return this.searchNode(node.left, key);
-        } else if(this.compareFn(key, node.key) === Compare.BIGGER_THAN) {
+        } else if(this.compareFn(key, node.key) === BIGGER_THAN_ONE) {
             return this.searchNode(node.right, key);
         } else {
             return true;
@@ -92,7 +100,9 @@ class BinarySearchTree<K> implements IBinarySearchTree<K>{
     }
 
     min(): Node<K> | null | undefined {
-        return this.minNode(this.root);
+        const MIN = this.minNode(this.root);
+        BinarySearchTree.MIN_VALUE = MIN?.key;
+        return MIN;
     }
 
     protected minNode(node: Node<K> | null): Node<K> | null | undefined{
@@ -105,7 +115,9 @@ class BinarySearchTree<K> implements IBinarySearchTree<K>{
     }
 
     max(): Node<K> | null | undefined {
-        return this.maxNode(this.root);
+        const MAX = this.maxNode(this.root);
+        BinarySearchTree.MAX_VALUE = MAX?.key;
+        return MAX;
     }
 
     protected maxNode(node: Node<K> | null ): Node<K> | null | undefined {
@@ -124,10 +136,10 @@ class BinarySearchTree<K> implements IBinarySearchTree<K>{
     protected removeNode(node: Node<K> | null, key: K | null | undefined): Node<K> | null {
         if(node == null) return null;
         
-        if(this.compareFn(key, node.key) === Compare.LESS_THAN) {
+        if(this.compareFn(key, node.key) === LESS_THAN_ZERO) {
             node.left = this.removeNode(node.left, key);
             return node;
-        } else if(this.compareFn(key, node.key) === Compare.BIGGER_THAN) {
+        } else if(this.compareFn(key, node.key) === BIGGER_THAN_ONE) {
             node.right = this.removeNode(node.right, key);
             return node;
         } else {
@@ -160,25 +172,5 @@ class BinarySearchTree<K> implements IBinarySearchTree<K>{
     }
 
 }
-
-const tree = new BinarySearchTree();
-tree.insert(11);
-tree.insert(7);
-tree.insert(15);
-tree.insert(5);
-tree.insert(3);
-tree.insert(9);
-tree.insert(8);
-tree.insert(10);
-tree.insert(13);
-tree.insert(12);
-tree.insert(14);
-tree.insert(20);
-tree.insert(18);
-tree.insert(25);
-tree.insert(6);
-
-
-tree.inOrderTraverse(printNode);
 
 export default BinarySearchTree;

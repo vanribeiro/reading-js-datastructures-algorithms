@@ -9,6 +9,7 @@
     ],
     "coverageDirectory" : "coverage",
     "collectCoverageFrom": [
-        "<rootDir>/src/**/*.{ts,js}"
+        "<rootDir>/src/**/*.{ts,js}",
+        "!<rootDir>/src/**/print.results.{ts,js}"
     ]
 }

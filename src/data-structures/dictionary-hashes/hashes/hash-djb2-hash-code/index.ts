@@ -1,5 +1,5 @@
 import { IndexString, Key, Value } from "../../../../types/dictionary";
-import { defaultToString } from "../../../../utils";
+import { defaultToString } from "../../../../utils/default-functions";
 import ValuePair from "../../dictionary/ValuePair";
 
 class HashTableLinearProbingDjb2 {
