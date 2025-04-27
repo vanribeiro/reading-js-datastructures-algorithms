@@ -10,7 +10,7 @@ Aos poucos estou o lendo o livro ["Estruturas de Dados e Algoritmos com JavaScri
     - [Set](/src/data-structures/set/)
     - [Stack](/src/data-structures/stacks/)
 
-## :person_running: Executando o code
+## Executando o code
 
 Na pasta arquivo deste projeto, via terminal, executar:
 
@@ -18,7 +18,7 @@ Na pasta arquivo deste projeto, via terminal, executar:
 npm run dev path/file-name.ts
 ```
 
-## :right_arrow: Saídas
+## Saídas
 
 Para facilitar a visualização da saída de algumas estruturas, adicionei um arquivo chamado `print.results.ts`. Ele será ignorado pelos testes, mas pode ser executado da mesma forma que na seção anterior:
 
@@ -26,7 +26,7 @@ Para facilitar a visualização da saída de algumas estruturas, adicionei um ar
 npm run dev path/print.results.ts
 ```
 
-## :information: Informações adicionais
+## Informações adicionais
 
 - Este repo usa:
   - [`NodeJS` v18.15.0](https://www.npmjs.com/package/node/v/18.15.0)
