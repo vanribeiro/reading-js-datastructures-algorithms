@@ -10,6 +10,9 @@
     "coverageDirectory" : "coverage",
     "collectCoverageFrom": [
         "<rootDir>/src/**/*.{ts,js}",
-        "!<rootDir>/src/**/print.results.{ts,js}"
+        "!<rootDir>/src/**/*.d.{ts}",
+        "!<rootDir>/src/**/print.results.{ts,js}",
+        "!<rootDir>/src/utils/colors.{ts,js}",
+        "!<rootDir>/src/utils/index.{ts,js}"
     ]
 }
