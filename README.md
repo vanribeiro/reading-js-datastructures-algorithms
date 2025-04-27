@@ -29,5 +29,5 @@ npm run dev path/print.results.ts
 ## Informações adicionais
 
 - Este repo usa:
-  - [`NodeJS` v18.15.0](https://www.npmjs.com/package/node/v/18.15.0)
-  - [`Npm` v9.5.0](https://www.npmjs.com/package/npm/v/9.5.0)
+  - `NodeJS` - [v18.15.0](https://www.npmjs.com/package/node/v/18.15.0)
+  - `Npm` - [v9.5.0](https://www.npmjs.com/package/npm/v/9.5.0)
