@@ -1,5 +1,5 @@
 import { DoublyNode, Element, Node } from "../../../../types/data-structures";
-import { defaultEquals } from "../../../../utils/index";
+import { defaultEquals } from "../../../../utils/default-functions";
 
 function DoublyLinkedListFn() {
 

@@ -1,4 +1,4 @@
-import { defaultEquals } from "../../../../utils";
+import { defaultEquals } from "../../../../utils/default-functions";
 import Node from "../../../../models/linked-lists/Node";
 import ILinkedList from "../../../../interfaces/ILinkedList";
 import { Element } from "../../../../types/data-structures";

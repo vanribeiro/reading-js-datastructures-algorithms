@@ -1,6 +1,6 @@
-import BinarySearchTree from ".";
+import { BinarySearchTree } from "../binary-search-tree";
 
-const tree = new BinarySearchTree<number>();
+const tree = BinarySearchTree();
 
 const orderValues: Array<number> = [];
 
@@ -85,15 +85,15 @@ describe('Data Structure: Binary Search Tree', () => {
         });
 
         it('should return the minimum value in tree', () => {
-            const min = tree.min();
-            expect(min?.key).toBe(3);
-            expect(BinarySearchTree.MIN_VALUE).toBe(3);
+            const expectedValue = 3;
+            const MIN_VALUE = tree.min()?.key;
+            expect(MIN_VALUE).toBe(expectedValue);
         });
 
         it('should return the maximum value in tree', () => {
-            const max = tree.max();
-            expect(max?.key).toBe(25);
-            expect(BinarySearchTree.MAX_VALUE).toBe(25);
+            const expectedValue = 25;
+            const MAX_VALUE = tree.max()?.key;
+            expect(MAX_VALUE).toBe(expectedValue);
         });
 
         it('should return true if 25 is found', () => {

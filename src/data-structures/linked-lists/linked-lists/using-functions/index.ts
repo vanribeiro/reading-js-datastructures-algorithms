@@ -1,5 +1,5 @@
 import { Element, Node } from "../../../../types/data-structures";
-import { defaultEquals } from "../../../../utils/index";
+import { defaultEquals } from "../../../../utils/default-functions";
 import ILinkedList from "../../../../interfaces/ILinkedList";
 
 function LinkedListFn(equals: Function = defaultEquals): ILinkedList {
